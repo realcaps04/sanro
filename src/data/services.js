@@ -64,32 +64,32 @@ export const waterproofingServices = [
   {
     title: 'Terrace Waterproofing',
     text: 'Protects exposed terraces from standing water and seasonal monsoon ingress.',
-    image: '/images/waterproofing/terrace.jpg',
+    image: '/images/waterproofing/card-terrace.jpg',
   },
   {
     title: 'Roof Waterproofing',
     text: 'Specified for sloped and flat roofs where leaks travel far before they are seen.',
-    image: '/images/waterproofing/roof.jpg',
+    image: '/images/waterproofing/card-roof.jpg',
   },
   {
     title: 'Bathroom Waterproofing',
     text: 'Treats wet rooms at the source so finishes and adjacent rooms stay sound.',
-    image: '/images/waterproofing/bathroom.jpg',
+    image: '/images/waterproofing/card-bathroom.jpg',
   },
   {
     title: 'Wall Waterproofing',
     text: 'Addresses damp walls, seepage and moisture tracking through masonry.',
-    image: '/images/rooms/commercial.jpg',
+    image: '/images/waterproofing/card-wall.jpg',
   },
   {
     title: 'Leakage Treatment',
     text: 'Diagnostic treatment for active leaks in residential and commercial buildings.',
-    image: '/images/projects/water-01.jpg',
+    image: '/images/waterproofing/card-leak.jpg',
   },
   {
     title: 'Commercial Waterproofing',
     text: 'Larger envelopes — offices, institutions and mixed-use buildings — specified as a system.',
-    image: '/images/projects/comm-01.jpg',
+    image: '/images/waterproofing/card-commercial.jpg',
   },
 ]
 

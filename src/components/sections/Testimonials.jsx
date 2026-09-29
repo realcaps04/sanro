@@ -1,3 +1,4 @@
+import { Star } from 'lucide-react'
 import { testimonials } from '../../data/testimonials'
 import { Container } from '../ui/Container'
 import { Reveal } from '../ui/Reveal'
@@ -18,7 +19,12 @@ export function Testimonials() {
                   <img src={item.image} alt="" className="img-cover" />
                 </div>
                 <div className="relative mx-4 -mt-12 rounded-card bg-white px-6 py-6 shadow-float">
-                  <p className="text-sm leading-7 text-ink">“{item.quote}”</p>
+                  <div className="flex gap-1 text-accent" aria-label="5 stars">
+                    {Array.from({ length: 5 }, (_, star) => (
+                      <Star key={star} size={15} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+                    ))}
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-ink">“{item.quote}”</p>
                   <div className="mt-5 flex items-center gap-3">
                     <img
                       src={item.portrait}

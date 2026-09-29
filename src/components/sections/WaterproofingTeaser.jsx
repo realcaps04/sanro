@@ -1,10 +1,37 @@
+import { useEffect, useState } from 'react'
 import { ArrowUpRight } from 'lucide-react'
 import { waterproofingServices } from '../../data/services'
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 
+const visible = 2
+
 export function WaterproofingTeaser() {
+  const slides = waterproofingServices
+  const loop = [...slides, ...slides.slice(0, visible)]
+  const [index, setIndex] = useState(0)
+  const [animate, setAnimate] = useState(true)
+
+  useEffect(() => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (reduce) return undefined
+    const timer = setInterval(() => {
+      setAnimate(true)
+      setIndex((current) => current + 1)
+    }, 3200)
+    return () => clearInterval(timer)
+  }, [])
+
+  useEffect(() => {
+    if (index !== slides.length) return undefined
+    const timer = setTimeout(() => {
+      setAnimate(false)
+      setIndex(0)
+    }, 700)
+    return () => clearTimeout(timer)
+  }, [index, slides.length])
+
   return (
     <section className="bg-white py-20 lg:py-28">
       <Container>
@@ -24,18 +51,33 @@ export function WaterproofingTeaser() {
               </Button>
             </div>
           </Reveal>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            {waterproofingServices.map((item, index) => (
-              <Reveal key={item.title} delay={index * 40}>
-                <div className="flex items-start justify-between gap-4 rounded-card bg-white px-6 py-6 shadow-card">
-                  <div>
-                    <h3 className="text-[15px] font-medium">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-muted">{item.text}</p>
+          <div className="overflow-hidden">
+            <div
+              className={`flex ${animate ? 'transition-transform duration-700 ease-out' : ''}`}
+              style={{
+                width: `${(loop.length / visible) * 100}%`,
+                transform: `translateX(-${(index * 100) / loop.length}%)`,
+              }}
+            >
+              {loop.map((item, itemIndex) => (
+                <div key={`${item.title}-${itemIndex}`} className="px-2" style={{ width: `${100 / loop.length}%` }}>
+                  <div className="overflow-hidden rounded-card bg-white shadow-card">
+                    <div className="aspect-[16/10] overflow-hidden">
+                      <img src={item.image} alt="" className="img-cover" />
+                    </div>
+                    <div className="flex items-start justify-between gap-3 px-4 py-4">
+                      <div>
+                        <h3 className="text-[15px] font-medium">{item.title}</h3>
+                        <p className="mt-2 text-sm leading-6 text-muted">{item.text}</p>
+                      </div>
+                      <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-white">
+                        <ArrowUpRight size={15} strokeWidth={2} aria-hidden="true" />
+                      </span>
+                    </div>
                   </div>
-                  <ArrowUpRight size={16} className="mt-1 shrink-0 text-muted" />
                 </div>
-              </Reveal>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </Container>
