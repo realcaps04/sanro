@@ -4,7 +4,7 @@ import { Reveal } from '../ui/Reveal'
 
 export function Rooms() {
   return (
-    <section className="bg-surface py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <Container>
         <Reveal>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Applications</p>
@@ -12,12 +12,16 @@ export function Rooms() {
         </Reveal>
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {rooms.map((room, index) => (
-            <Reveal key={room.title} delay={index * 50} className={index === 0 ? 'sm:col-span-2 lg:col-span-2' : ''}>
-              <article className="group relative overflow-hidden">
-                <div className={index === 0 ? 'aspect-[16/11] lg:aspect-[4/5]' : 'aspect-[4/5]'}>
+            <Reveal
+              key={room.title}
+              delay={index * 50}
+              className={index === 0 ? 'sm:col-span-2 lg:col-span-2 lg:row-span-2' : ''}
+            >
+              <article className="group relative h-full overflow-hidden rounded-card shadow-card">
+                <div className={index === 0 ? 'h-full min-h-[420px] lg:absolute lg:inset-0 lg:min-h-0' : 'aspect-[4/5]'}>
                   <img
                     src={room.image}
-                    alt={`${room.title} interior with SANRO fibre doors`}
+                    alt={`${room.title} with a SANRO fibre door`}
                     className="img-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
                 </div>

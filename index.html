@@ -14,7 +14,17 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..700&display=swap"
       rel="stylesheet"
     />
-    <title>SANRO Fibre Glass Industries | Premium Interior Fibre Doors</title>
+    <title>Sanro | Premium Interior Fibre Doors</title>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then((registrations) => {
+          registrations.forEach((registration) => registration.unregister())
+        })
+      }
+      if (window.caches) {
+        caches.keys().then((keys) => keys.forEach((key) => caches.delete(key)))
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

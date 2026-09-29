@@ -7,12 +7,15 @@
   --color-ink: #111111;
   --color-muted: #666666;
   --color-line: #e7e7e4;
-  --color-accent: #c45c26;
-  --color-accent-dark: #a34a1d;
-}
+  --color-accent: #ff5700;
+  --color-accent-dark: #e04c00;
 
-html {
-  scroll-behavior: smooth;
+  --radius-card: 1.25rem;
+  --radius-control: 0.600rem;
+
+  --shadow-card: 0 14px 36px rgb(17 17 17 / 0.08);
+  --shadow-float: 0 10px 24px rgb(17 17 17 / 0.12);
+  --shadow-header: 0 10px 30px rgb(17 17 17 / 0.06);
 }
 
 body {
@@ -37,9 +40,34 @@ textarea {
   font-family: inherit;
 }
 
-:focus-visible {
+input,
+select,
+textarea {
+  border: none;
+}
+
+input:focus,
+input:focus-visible,
+select:focus,
+select:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: none;
+  border: none;
+}
+
+button:focus-visible,
+a:focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 3px;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .img-cover {

@@ -9,9 +9,9 @@ export function HomeGallery() {
   return (
     <section className="bg-white py-20 lg:py-28">
       <Container className="grid items-end gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <Reveal>
+        <Reveal className="lg:mb-16">
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Gallery</p>
-          <h2 className="mt-4 text-3xl font-medium leading-[1.15] tracking-[-0.03em] sm:text-4xl">
+          <h2 className="mt-4 text-3xl font-semibold leading-[1.15] tracking-[-0.03em] sm:text-4xl">
             Serious materials for making doors.
           </h2>
           <p className="mt-5 max-w-sm text-[15px] leading-7 text-muted">
@@ -28,7 +28,7 @@ export function HomeGallery() {
             {items.map((item, index) => (
               <div
                 key={item.id}
-                className={`overflow-hidden ${index === 0 ? 'col-span-2 aspect-[16/10] sm:col-span-2 sm:row-span-2 sm:aspect-auto sm:h-full' : 'aspect-square'}`}
+                className={`overflow-hidden rounded-card shadow-card ${index === 0 ? 'col-span-2 aspect-[16/10] sm:col-span-2 sm:row-span-2 sm:aspect-auto sm:h-full' : 'aspect-square'}`}
               >
                 <img src={item.src} alt={item.alt} className="img-cover" />
               </div>

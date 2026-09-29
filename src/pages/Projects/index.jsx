@@ -16,10 +16,12 @@ export default function ProjectsPage() {
         title="SANRO Projects | Residential, Commercial and Waterproofing"
         description="Completed SANRO work across residential interiors, commercial spaces, custom doors and waterproofing in Kerala."
       />
-      <section className="bg-surface pt-28 pb-16 lg:pt-32 lg:pb-20">
+      <section className="bg-white pt-28 pb-16 lg:pt-32 lg:pb-20">
         <Container>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Work</p>
-          <h1 className="mt-4 text-4xl font-medium tracking-[-0.04em] sm:text-5xl">SANRO Projects</h1>
+          <h1 className="mt-4 text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
+            <span className="text-accent">SANRO</span> Projects
+          </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-7 text-muted">
             Real residential and commercial work — interior fibre doors, custom manufacturing and waterproofing.
           </p>

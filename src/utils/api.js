@@ -16,5 +16,6 @@ export function isValidEmail(value) {
 
 export function isValidPhone(value) {
   const digits = value.replace(/\D/g, '')
-  return digits.length >= 10 && digits.length <= 13
+  const local = digits.length === 12 && digits.startsWith('91') ? digits.slice(2) : digits
+  return /^[6-9]\d{9}$/.test(local)
 }

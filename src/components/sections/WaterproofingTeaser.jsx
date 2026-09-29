@@ -24,10 +24,10 @@ export function WaterproofingTeaser() {
               </Button>
             </div>
           </Reveal>
-          <div className="grid grid-cols-1 gap-px border border-line bg-line sm:grid-cols-2">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {waterproofingServices.map((item, index) => (
               <Reveal key={item.title} delay={index * 40}>
-                <div className="flex items-start justify-between gap-4 bg-white px-6 py-6">
+                <div className="flex items-start justify-between gap-4 rounded-card bg-white px-6 py-6 shadow-card">
                   <div>
                     <h3 className="text-[15px] font-medium">{item.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted">{item.text}</p>

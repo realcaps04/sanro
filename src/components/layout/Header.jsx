@@ -24,21 +24,18 @@ export function Header() {
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           overHero
             ? 'bg-transparent text-white'
-            : 'border-b border-line bg-white/95 text-ink backdrop-blur-sm'
+            : 'bg-white/95 text-ink backdrop-blur-sm'
         } ${scrolled ? 'py-2.5' : 'py-4'}`}
       >
         <div className="mx-auto flex max-w-[1240px] items-center justify-between px-5 sm:px-8">
-          <Link to="/" className="flex flex-col leading-none">
-            <span className={`font-semibold tracking-[0.22em] ${scrolled ? 'text-[17px]' : 'text-[19px]'}`}>
-              SANRO
-            </span>
-            <span
-              className={`mt-1 text-[9px] font-medium uppercase tracking-[0.22em] ${
-                overHero ? 'text-white/70' : 'text-muted'
-              }`}
-            >
-              Fibre Glass Industries
-            </span>
+          <Link to="/" className="flex items-center" aria-label="SANRO Fibre Doors">
+            <img
+              src="/images/logo/sanro_logo.png"
+              alt="SANRO Fibre Doors"
+              className={`w-auto object-contain transition-all duration-300 ${
+                scrolled ? 'h-11' : 'h-16'
+              } ${overHero ? '' : 'brightness-0'}`}
+            />
           </Link>
 
           <nav className="hidden items-center gap-8 lg:flex">
@@ -67,15 +64,15 @@ export function Header() {
           <div className="flex items-center gap-3">
             <Button
               variant={overHero ? 'secondary' : 'primary'}
-              className="hidden sm:inline-flex !px-5 !py-2.5"
+              className="hidden sm:inline-flex !gap-1.5 !rounded-full !px-5 !py-2 !text-[12px]"
               onClick={() => openQuote()}
             >
-              Get a Quote
+              Connect with Us
             </Button>
             <button
               type="button"
-              className={`flex h-10 w-10 items-center justify-center border lg:hidden ${
-                overHero ? 'border-white/40' : 'border-line'
+              className={`flex h-10 w-10 items-center justify-center rounded-control shadow-float lg:hidden ${
+                overHero ? 'bg-white/15 text-white' : 'bg-white text-ink'
               }`}
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"

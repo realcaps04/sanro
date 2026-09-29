@@ -12,7 +12,7 @@ export default function ServicesPage() {
         title="Services | SANRO Fibre Glass Industries"
         description="Fibre door solutions, waterproofing, custom fibre manufacturing and allied construction services from SANRO."
       />
-      <section className="bg-surface pt-28 pb-16 lg:pt-32 lg:pb-20">
+      <section className="bg-white pt-28 pb-16 lg:pt-32 lg:pb-20">
         <Container>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Services</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
@@ -31,10 +31,10 @@ export default function ServicesPage() {
             return (
               <article
                 key={service.slug}
-                className="grid items-center gap-10 border-t border-line pt-16 first:border-t-0 first:pt-0 lg:grid-cols-2 lg:gap-16"
+                className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16"
               >
                 <div className={index % 2 ? 'lg:order-2' : ''}>
-                  <div className="overflow-hidden bg-surface">
+                  <div className="overflow-hidden rounded-card bg-surface shadow-card">
                     <div className="aspect-[5/4]">
                       <img src={service.image} alt={service.title} className="img-cover" />
                     </div>
@@ -49,7 +49,7 @@ export default function ServicesPage() {
                   <ul className="mt-6 space-y-2">
                     {service.items.map((item) => (
                       <li key={item} className="flex items-center gap-3 text-sm">
-                        <span className="h-px w-5 bg-accent" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                         {item}
                       </li>
                     ))}

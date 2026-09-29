@@ -1,24 +1,47 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
+import { ReactLenis, useLenis } from 'lenis/react'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { QuoteModal } from '../forms/QuoteModal'
 
-export function Layout() {
+function ScrollRestore() {
   const { pathname } = useLocation()
+  const lenis = useLenis()
 
   useEffect(() => {
+    if (lenis) {
+      lenis.scrollTo(0, { immediate: true })
+      return
+    }
     window.scrollTo(0, 0)
-  }, [pathname])
+  }, [pathname, lenis])
 
+  return null
+}
+
+export function Layout() {
   return (
-    <div className="min-h-screen bg-white text-ink">
-      <Header />
-      <main>
-        <Outlet />
-      </main>
-      <Footer />
-      <QuoteModal />
-    </div>
+    <ReactLenis
+      root
+      options={{
+        autoRaf: true,
+        lerp: 0.08,
+        duration: 1.15,
+        smoothWheel: true,
+        anchors: true,
+        stopInertiaOnNavigate: true,
+      }}
+    >
+      <ScrollRestore />
+      <div className="min-h-screen bg-white text-ink">
+        <Header />
+        <main>
+          <Outlet />
+        </main>
+        <Footer />
+        <QuoteModal />
+      </div>
+    </ReactLenis>
   )
 }

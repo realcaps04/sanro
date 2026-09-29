@@ -25,7 +25,7 @@ export function WhySanro() {
               const Icon = icons[index]
               return (
                 <Reveal key={point.title} delay={index * 60}>
-                  <div className="border-t border-line pt-6">
+                  <div className="rounded-card bg-surface px-6 py-6 shadow-card">
                     <Icon size={20} strokeWidth={1.5} className="text-accent" />
                     <h3 className="mt-4 text-lg font-medium tracking-[-0.02em]">{point.title}</h3>
                     <p className="mt-2 text-sm leading-6 text-muted">{point.text}</p>

@@ -14,7 +14,8 @@ export default function WaterproofingPage() {
         title="Waterproofing | SANRO Fibre Glass Industries"
         description="Professional terrace, roof, bathroom, wall and commercial waterproofing from SANRO in Kerala."
       />
-      <section className="relative min-h-[70vh] overflow-hidden bg-ink">
+      <section className="bg-white px-3 pt-3 sm:px-4 sm:pt-4">
+      <div className="relative min-h-[70vh] overflow-hidden rounded-card bg-ink shadow-float">
         <img
           src="/images/waterproofing/hero.jpg"
           alt="Residential building envelope prepared for waterproofing"
@@ -33,13 +34,14 @@ export default function WaterproofingPage() {
             </p>
           </div>
         </Container>
+      </div>
       </section>
       <section className="bg-white py-16 lg:py-24">
         <Container>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {waterproofingServices.map((item) => (
               <article key={item.title} className="group">
-                <div className="overflow-hidden bg-surface">
+                <div className="overflow-hidden rounded-card bg-surface shadow-card">
                   <div className="aspect-[5/4]">
                     <img src={item.image} alt={item.title} className="img-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                   </div>

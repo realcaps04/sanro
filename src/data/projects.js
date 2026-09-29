@@ -11,7 +11,7 @@ export const projects = [
     description:
       'SANRO manufactured a coordinated set of interior fibre doors for a family residence in Idukki. The brief asked for a calm, modern face across living, bedrooms and bathrooms, with finishes that would hold through monsoon humidity.',
     image: '/images/projects/resid-01.jpg',
-    images: ['/images/projects/resid-01.jpg', '/images/doors/modern-01.jpg', '/images/rooms/living.jpg'],
+    images: ['/images/projects/resid-01.jpg', '/images/doors/classic-02.jpg', '/images/doors/classic-01.jpg'],
     year: '2025',
   },
   {
@@ -24,7 +24,7 @@ export const projects = [
     description:
       'A compact apartment needed doors that would disappear into pale joinery. SANRO supplied flush minimal doors, colour-matched to the interior palette, including a moisture-specified bathroom leaf.',
     image: '/images/projects/resid-02.jpg',
-    images: ['/images/projects/resid-02.jpg', '/images/doors/minimal-01.jpg', '/images/doors/minimal-02.jpg'],
+    images: ['/images/projects/resid-02.jpg', '/images/doors/custom-01.jpg', '/images/doors/customise.jpg'],
     year: '2025',
   },
   {
@@ -50,7 +50,7 @@ export const projects = [
     description:
       'An office suite needed doors that would read as architecture rather than joinery. SANRO supplied a run of minimal flush doors for cabins, meeting rooms and service spaces.',
     image: '/images/projects/comm-02.jpg',
-    images: ['/images/projects/comm-02.jpg', '/images/rooms/office.jpg', '/images/doors/modern-03.jpg'],
+    images: ['/images/projects/comm-02.jpg', '/images/doors/designer-01.jpg', '/images/doors/custom-02.jpg'],
     year: '2025',
   },
   {

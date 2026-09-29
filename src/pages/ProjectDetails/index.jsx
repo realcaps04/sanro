@@ -38,14 +38,14 @@ export default function ProjectDetailsPage() {
       </section>
       <section className="pb-20">
         <Container className="space-y-4">
-          <div className="overflow-hidden bg-surface">
+          <div className="overflow-hidden rounded-card bg-surface shadow-card">
             <div className="aspect-[16/9]">
               <img src={project.images[0]} alt={project.name} className="img-cover" />
             </div>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             {project.images.slice(1).map((src) => (
-              <div key={src} className="overflow-hidden bg-surface">
+              <div key={src} className="overflow-hidden rounded-card bg-surface shadow-card">
                 <div className="aspect-[5/4]">
                   <img src={src} alt="" className="img-cover" />
                 </div>
@@ -58,7 +58,7 @@ export default function ProjectDetailsPage() {
         </Container>
       </section>
       {others.length ? (
-        <section className="border-t border-line bg-surface py-16">
+        <section className="bg-white py-16">
           <Container>
             <h2 className="mb-10 text-2xl font-medium">More projects</h2>
             <div className="grid gap-10 md:grid-cols-2">

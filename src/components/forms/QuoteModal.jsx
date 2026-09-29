@@ -34,11 +34,12 @@ export function QuoteModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="quote-title"
-        className="relative z-10 max-h-[92vh] w-full overflow-y-auto bg-white sm:max-w-xl sm:border sm:border-line"
+        data-lenis-prevent
+        className="no-scrollbar relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-card bg-white shadow-float sm:max-w-xl sm:rounded-card"
       >
-        <div className="flex items-start justify-between border-b border-line px-6 py-5 sm:px-8">
+        <div className="flex items-start justify-between px-6 py-5 sm:px-8">
           <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-accent">Get a Quote</p>
+            <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-accent">Connect with Us</p>
             <h2 id="quote-title" className="mt-2 text-2xl font-medium tracking-[-0.03em]">
               Tell us what you need.
             </h2>
@@ -46,7 +47,7 @@ export function QuoteModal() {
           <button
             type="button"
             onClick={closeQuote}
-            className="mt-1 flex h-10 w-10 items-center justify-center border border-line text-ink transition-colors hover:border-ink"
+            className="mt-1 flex h-10 w-10 items-center justify-center rounded-control bg-surface text-ink shadow-card transition-colors hover:bg-ink hover:text-white"
             aria-label="Close"
           >
             <X size={18} />

@@ -37,7 +37,7 @@ export default function ProductDetailsPage() {
       <section className="bg-white pt-28 pb-20 lg:pt-32 lg:pb-28">
         <Container className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
-            <div className="overflow-hidden bg-surface">
+            <div className="overflow-hidden rounded-card bg-surface shadow-card">
               <div className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
                 <img
                   src={gallery[active]}
@@ -53,7 +53,7 @@ export default function ProductDetailsPage() {
                     key={src}
                     type="button"
                     onClick={() => setActive(index)}
-                    className={`overflow-hidden border ${active === index ? 'border-ink' : 'border-transparent'}`}
+                    className={`overflow-hidden rounded-control transition-shadow ${active === index ? 'shadow-float' : 'shadow-card opacity-80'}`}
                   >
                     <span className="block aspect-square">
                       <img src={src} alt="" className="img-cover" />
@@ -67,13 +67,22 @@ export default function ProductDetailsPage() {
             <p className="text-[11px] uppercase tracking-[0.22em] text-muted">
               {product.category} · {product.code}
             </p>
-            <h1 className="mt-3 text-4xl font-medium tracking-[-0.04em]">{product.name}</h1>
+            <h1 className="mt-3 text-4xl font-medium tracking-[-0.04em]">
+              {product.name.startsWith('SANRO ') ? (
+                <>
+                  <span className="text-accent">SANRO</span>
+                  {product.name.slice(5)}
+                </>
+              ) : (
+                product.name
+              )}
+            </h1>
             <p className="mt-6 text-[15px] leading-7 text-muted">{product.description}</p>
-            <div className="mt-10 border-t border-line pt-8">
+            <div className="mt-10 pt-2">
               <h2 className="text-[11px] uppercase tracking-[0.2em] text-muted">Available finishes</h2>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {product.finishes.map((finish) => (
-                  <li key={finish} className="border border-line px-3 py-1.5 text-sm">
+                  <li key={finish} className="rounded-control bg-surface px-3 py-1.5 text-sm shadow-card">
                     {finish}
                   </li>
                 ))}
@@ -87,7 +96,7 @@ export default function ProductDetailsPage() {
               <h2 className="text-[11px] uppercase tracking-[0.2em] text-muted">Applications</h2>
               <p className="mt-3 text-sm leading-6 text-muted">{product.applications.join(' · ')}</p>
             </div>
-            <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 border-t border-line pt-8">
+            <dl className="mt-8 grid grid-cols-2 gap-x-6 gap-y-4 rounded-card bg-surface px-5 py-6 shadow-card">
               {product.specs.map((spec) => (
                 <div key={spec.label}>
                   <dt className="text-[11px] uppercase tracking-[0.16em] text-muted">{spec.label}</dt>
@@ -105,7 +114,7 @@ export default function ProductDetailsPage() {
         </Container>
       </section>
       {related.length ? (
-        <section className="border-t border-line bg-surface py-16 lg:py-24">
+        <section className="bg-white py-16 lg:py-24">
           <Container>
             <h2 className="mb-10 text-2xl font-medium tracking-[-0.03em]">Related doors</h2>
             <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

@@ -12,7 +12,7 @@ export function Customisation() {
     <section className="bg-white py-20 lg:py-28">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal delay={80} className="lg:order-2">
-          <div className="overflow-hidden bg-surface">
+          <div className="overflow-hidden rounded-card bg-surface shadow-card">
             <div className="aspect-[5/4]">
               <img
                 src="/images/doors/customise.jpg"
@@ -27,14 +27,15 @@ export function Customisation() {
           <h2 className="mt-4 text-3xl font-medium leading-[1.15] tracking-[-0.03em] sm:text-4xl lg:text-[42px]">
             Your space. Your door.
           </h2>
-          <p className="mt-6 max-w-md text-[15px] leading-7 text-muted">
-            Every interior has its own language. SANRO can follow it — from a single replacement leaf to a coordinated
-            set across a house or commercial project.
+          <p className="mt-6 text-[15px] leading-7 text-muted sm:text-[14.5px] sm:leading-6">
+            Every interior has its own language. SANRO can follow it — from a single
+            <br />
+            replacement leaf to a coordinated set across a house or commercial project.
           </p>
-          <ul className="mt-8 space-y-3">
+          <ul className="mt-8 grid grid-cols-2 gap-x-8 gap-y-3">
             {options.map((item) => (
               <li key={item} className="flex items-center gap-3 text-sm">
-                <span className="h-px w-6 bg-accent" />
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 {item}
               </li>
             ))}

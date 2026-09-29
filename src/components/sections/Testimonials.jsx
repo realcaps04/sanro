@@ -4,7 +4,7 @@ import { Reveal } from '../ui/Reveal'
 
 export function Testimonials() {
   return (
-    <section className="bg-surface py-20 lg:py-28">
+    <section className="bg-white py-20 lg:py-28">
       <Container>
         <Reveal>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Testimonials</p>
@@ -14,13 +14,22 @@ export function Testimonials() {
           {testimonials.map((item, index) => (
             <Reveal key={item.id} delay={index * 80}>
               <article className="relative">
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden rounded-card shadow-card">
                   <img src={item.image} alt="" className="img-cover" />
                 </div>
-                <div className="relative mx-4 -mt-12 border border-line bg-white px-6 py-6">
+                <div className="relative mx-4 -mt-12 rounded-card bg-white px-6 py-6 shadow-float">
                   <p className="text-sm leading-7 text-ink">“{item.quote}”</p>
-                  <p className="mt-5 text-[13px] font-medium">{item.name}</p>
-                  <p className="mt-1 text-[12px] text-muted">{item.role}</p>
+                  <div className="mt-5 flex items-center gap-3">
+                    <img
+                      src={item.portrait}
+                      alt={item.name}
+                      className="h-11 w-11 shrink-0 rounded-full object-cover shadow-card"
+                    />
+                    <div>
+                      <p className="text-[13px] font-medium">{item.name}</p>
+                      <p className="mt-0.5 text-[12px] text-muted">{item.role}</p>
+                    </div>
+                  </div>
                 </div>
               </article>
             </Reveal>

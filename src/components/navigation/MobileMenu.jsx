@@ -7,19 +7,20 @@ export function MobileMenu({ open, onClose, onQuote }) {
   if (!open) return null
 
   return (
-    <div className="fixed inset-0 z-[70] bg-white lg:hidden">
+    <div className="fixed inset-0 z-[70] bg-ink/40 p-3 lg:hidden">
+    <div data-lenis-prevent className="no-scrollbar h-full overflow-y-auto rounded-card bg-white shadow-float">
       <div className="flex items-center justify-between px-5 py-4">
-        <p className="text-lg font-semibold tracking-[0.18em]">SANRO</p>
+        <img src="/images/logo/sanro_logo.png" alt="SANRO Fibre Doors" className="h-12 w-auto brightness-0" />
         <button
           type="button"
           onClick={onClose}
-          className="flex h-10 w-10 items-center justify-center border border-line"
+          className="flex h-10 w-10 items-center justify-center rounded-control bg-surface shadow-card"
           aria-label="Close menu"
         >
           <X size={18} />
         </button>
       </div>
-      <nav className="flex flex-col px-5 pt-6">
+      <nav className="flex flex-col gap-1 px-5 pt-4 pb-6">
         {navLinks.map((link) => (
           <NavLink
             key={link.to}
@@ -27,8 +28,8 @@ export function MobileMenu({ open, onClose, onQuote }) {
             onClick={onClose}
             end={link.to === '/'}
             className={({ isActive }) =>
-              `border-b border-line py-4 text-2xl font-medium tracking-[-0.03em] ${
-                isActive ? 'text-accent' : 'text-ink'
+              `rounded-control px-4 py-3 text-2xl font-medium tracking-[-0.03em] ${
+                isActive ? 'bg-surface text-accent shadow-card' : 'text-ink'
               }`
             }
           >
@@ -43,10 +44,11 @@ export function MobileMenu({ open, onClose, onQuote }) {
               onQuote()
             }}
           >
-            Get a Quote
+            Connect with Us
           </Button>
         </div>
       </nav>
+    </div>
     </div>
   )
 }

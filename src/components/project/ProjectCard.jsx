@@ -4,7 +4,7 @@ export function ProjectCard({ project }) {
   return (
     <article className="group">
       <Link to={`/projects/${project.slug}`} className="block">
-        <div className="overflow-hidden bg-surface">
+        <div className="overflow-hidden rounded-card bg-surface shadow-card">
           <div className="aspect-[5/4]">
             <img
               src={project.image}

@@ -7,13 +7,13 @@ export const products = [
     code: 'SR-M01',
     category: 'Modern',
     short:
-      'A flush-panel fibre door with a quiet vertical grain and a refined, architectural profile.',
+      'A light oak fibre door with horizontal grooves, made for open living rooms.',
     description:
-      'SANRO Modern 01 is designed for contemporary interiors that need a door to recede into the architecture rather than compete with it. The flush fibre body is moulded for dimensional stability in humid climates, then finished to a smooth, even surface that accepts a range of interior colours.',
-    image: '/images/doors/modern-01.jpg',
-    gallery: ['/images/doors/modern-01.jpg', '/images/doors/customise.jpg', '/images/rooms/living.jpg'],
-    finishes: ['Matte White', 'Warm Oak', 'Graphite', 'Custom colour'],
-    design: 'Flush panel with subtle vertical grain. Concealed edge detailing. Optional groove lines.',
+      'SANRO Modern 01 is a light oak fibre door with a quiet run of horizontal grooves. It is moulded for humid climates and finished so the grain stays even across the leaf.',
+    image: '/images/doors/classic-02.jpg',
+    gallery: ['/images/doors/classic-02.jpg', '/images/doors/customise.jpg', '/images/doors/classic-01.jpg'],
+    finishes: ['Light Oak', 'Warm Oak', 'Graphite', 'Custom colour'],
+    design: 'Horizontal groove face in a light oak tone, with a matching frame.',
     applications: ['Living spaces', 'Bedrooms', 'Offices', 'Apartment interiors'],
     specs: [
       { label: 'Material', value: 'Moulded fibre composite' },
@@ -33,8 +33,8 @@ export const products = [
       'A two-panel contemporary door with a crisp reveal, suited to open-plan living and circulation.',
     description:
       'Modern 02 introduces a shallow two-panel geometry for interiors that want a little more definition without returning to traditional moulding. The fibre construction holds its lines through Kerala’s wet and dry seasons.',
-    image: '/images/doors/modern-02.jpg',
-    gallery: ['/images/doors/modern-02.jpg', '/images/doors/customise.jpg', '/images/rooms/living.jpg'],
+    image: '/images/doors/custom-02.jpg',
+    gallery: ['/images/doors/custom-02.jpg', '/images/doors/customise.jpg', '/images/doors/designer-01.jpg'],
     finishes: ['Stone Grey', 'Ivory', 'Teak Tone', 'Custom colour'],
     design: 'Shallow two-panel geometry with a clean stiles-and-rails silhouette.',
     applications: ['Living spaces', 'Dining', 'Passage doors'],
@@ -55,8 +55,8 @@ export const products = [
     short: 'A taller visual language with a single vertical recess, made for high-ceiling interiors.',
     description:
       'Modern 03 is proportioned for spaces with height. A single vertical recess draws the eye upward without ornament, keeping the door calm, precise and architectural.',
-    image: '/images/doors/modern-03.jpg',
-    gallery: ['/images/doors/modern-03.jpg', '/images/doors/customise.jpg'],
+    image: '/images/doors/designer-01.jpg',
+    gallery: ['/images/doors/designer-01.jpg', '/images/doors/custom-02.jpg', '/images/doors/customise.jpg'],
     finishes: ['Soft Black', 'Warm White', 'Walnut Tone'],
     design: 'Single vertical recess. Slim perimeter frame. Optional matching architrave.',
     applications: ['Villas', 'Duplexes', 'Commercial interiors'],
@@ -75,13 +75,13 @@ export const products = [
     code: 'SR-C01',
     category: 'Classic',
     short:
-      'A four-panel fibre door that carries traditional proportions with a contemporary, durable body.',
+      'A walnut fibre door with a single vertical gold inlay and a dark matching frame.',
     description:
-      'Classic 01 is for homes that still want panelled character — without the swelling, cracking and maintenance of timber in a wet climate. The panels are moulded into the fibre body so the geometry stays true over time.',
+      'Classic 01 is a walnut-tone fibre door finished with one vertical inlay. The leaf is moulded so the grain and line stay true in a humid climate, without the swelling of timber.',
     image: '/images/doors/classic-01.jpg',
-    gallery: ['/images/doors/classic-01.jpg', '/images/doors/intro.jpg'],
-    finishes: ['Honey Teak', 'Mahogany Tone', 'Antique White'],
-    design: 'Four-panel raised profile with restrained moulding.',
+    gallery: ['/images/doors/classic-01.jpg', '/images/doors/classic-02.jpg', '/images/doors/customise.jpg'],
+    finishes: ['Walnut', 'Gold inlay', 'Dark frame'],
+    design: 'Vertical walnut grain with a single metallic inlay and a matching architrave.',
     applications: ['Bedrooms', 'Traditional homes', 'Heritage-inspired interiors'],
     specs: [
       { label: 'Material', value: 'Moulded fibre composite' },
@@ -101,7 +101,7 @@ export const products = [
     description:
       'Classic 02 uses a six-panel layout with shallower relief, so the door reads as traditional without becoming heavy. Ideal where multiple doors sit in a single corridor.',
     image: '/images/doors/classic-02.jpg',
-    gallery: ['/images/doors/classic-02.jpg', '/images/rooms/bedroom.jpg'],
+    gallery: ['/images/doors/classic-02.jpg', '/images/doors/classic-01.jpg'],
     finishes: ['Natural Teak Tone', 'Cream', 'Deep Walnut'],
     design: 'Six-panel layout with shallow relief and a square-edge option.',
     applications: ['Bedrooms', 'Study', 'Guest rooms'],
@@ -123,7 +123,7 @@ export const products = [
     description:
       'Designer 01 is a composed groove pattern across a flush fibre face. It is intended for feature rooms — living, dining, principal bedrooms — where the door is part of the interior language.',
     image: '/images/doors/designer-01.jpg',
-    gallery: ['/images/doors/designer-01.jpg', '/images/doors/customise.jpg', '/images/gallery/g1.jpg'],
+    gallery: ['/images/doors/designer-01.jpg', '/images/doors/customise.jpg', '/images/doors/custom-02.jpg'],
     finishes: ['Putty', 'Olive', 'Charcoal', 'Custom colour'],
     design: 'Linear groove composition. Available as a matching pair for double openings.',
     applications: ['Feature living rooms', 'Principal bedrooms', 'Boutique interiors'],
@@ -145,7 +145,7 @@ export const products = [
     description:
       'Designer 02 divides the door face into a quiet geometric field. It works especially well in spaces with art, stone or timber joinery that need a door of equal intent.',
     image: '/images/doors/designer-02.jpg',
-    gallery: ['/images/doors/designer-02.jpg', '/images/gallery/g3.jpg'],
+    gallery: ['/images/doors/designer-02.jpg', '/images/doors/designer-01.jpg', '/images/doors/classic-01.jpg'],
     finishes: ['Warm Sand', 'Ink', 'Custom colour'],
     design: 'Geometric field with balanced divisions. Optional inlay texture.',
     applications: ['Designer homes', 'Hospitality interiors', 'Show residences'],
@@ -166,8 +166,8 @@ export const products = [
     short: 'An almost silent flush door for interiors that prefer uninterrupted planes.',
     description:
       'Minimal 01 is a true flush door — no grooves, no panels, no visual noise. It is specified where walls, joinery and doors should read as a single architectural surface.',
-    image: '/images/doors/minimal-01.jpg',
-    gallery: ['/images/doors/minimal-01.jpg', '/images/rooms/office.jpg'],
+    image: '/images/doors/custom-01.jpg',
+    gallery: ['/images/doors/custom-01.jpg', '/images/doors/customise.jpg'],
     finishes: ['Gallery White', 'Warm Grey', 'Custom colour match'],
     design: 'Fully flush face. Hidden or slim hardware recommended.',
     applications: ['Minimal interiors', 'Offices', 'Gallery-like homes'],
@@ -188,8 +188,8 @@ export const products = [
     short: 'A bathroom-ready flush fibre door with a tighter, moisture-first specification.',
     description:
       'Minimal 02 is specified for bathrooms, utility rooms and wet-adjacent interiors. The fibre body and sealed edges are designed for daily moisture without swelling or peeling.',
-    image: '/images/doors/minimal-02.jpg',
-    gallery: ['/images/doors/minimal-02.jpg', '/images/rooms/bathroom.jpg'],
+    image: '/images/doors/customise.jpg',
+    gallery: ['/images/doors/customise.jpg', '/images/doors/custom-01.jpg'],
     finishes: ['White', 'Soft Grey', 'Sage'],
     design: 'Flush face with sealed edges. Suitable for wet-adjacent rooms.',
     applications: ['Bathrooms', 'Utility', 'Service corridors'],
@@ -211,7 +211,7 @@ export const products = [
     description:
       'Custom 01 is the starting point for project work — villas, apartments and commercial interiors that need matching sets, unusual dimensions, or a finish that belongs to a specific palette.',
     image: '/images/doors/custom-01.jpg',
-    gallery: ['/images/doors/custom-01.jpg', '/images/doors/customise.jpg', '/images/factory/design.jpg'],
+    gallery: ['/images/doors/custom-01.jpg', '/images/doors/customise.jpg', '/images/doors/classic-01.jpg'],
     finishes: ['Client-specified colour', 'Texture match', 'Wood-tone series'],
     design: 'Fully custom face, size and hardware coordination.',
     applications: ['Villas', 'Apartment projects', 'Hospitality'],
@@ -233,7 +233,7 @@ export const products = [
     description:
       'Custom 02 covers larger openings — principal living rooms, office suites and commercial interiors — where a single leaf is not enough and the door must still behave as architecture.',
     image: '/images/doors/custom-02.jpg',
-    gallery: ['/images/doors/custom-02.jpg', '/images/rooms/commercial.jpg'],
+    gallery: ['/images/doors/custom-02.jpg', '/images/doors/designer-01.jpg', '/images/doors/customise.jpg'],
     finishes: ['Project palette', 'Metallic accent options', 'Timber-tone'],
     design: 'Double leaf or oversized single. Coordinated meeting stiles.',
     applications: ['Principal rooms', 'Offices', 'Commercial interiors'],

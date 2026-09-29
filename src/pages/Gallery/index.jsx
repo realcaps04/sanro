@@ -15,7 +15,7 @@ export default function GalleryPage() {
         title="Gallery | SANRO Fibre Glass Industries"
         description="A visual gallery of SANRO doors, interiors, manufacturing, projects and waterproofing."
       />
-      <section className="bg-surface pt-28 pb-12 lg:pt-32">
+      <section className="bg-white pt-28 pb-12 lg:pt-32">
         <Container>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Gallery</p>
           <h1 className="mt-4 text-4xl font-medium tracking-[-0.04em] sm:text-5xl">The work, as it looks.</h1>
@@ -28,7 +28,7 @@ export default function GalleryPage() {
         <Container>
           <div className="masonry">
             {items.map((item) => (
-              <figure key={item.id} className="masonry-item overflow-hidden bg-surface">
+              <figure key={item.id} className="masonry-item overflow-hidden rounded-card bg-surface shadow-card">
                 <img
                   src={item.src}
                   alt={item.alt}

@@ -15,10 +15,10 @@ export default function ContactPage() {
   return (
     <>
       <Seo
-        title="Contact SANRO | Get a Quote"
+        title="Contact SANRO | Connect with Us"
         description="Enquire with SANRO Fibre Glass Industries for interior fibre doors, custom fibre solutions and waterproofing."
       />
-      <section className="bg-surface pt-28 pb-16 lg:pt-32 lg:pb-20">
+      <section className="bg-white pt-28 pb-16 lg:pt-32 lg:pb-20">
         <Container>
           <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">Contact</p>
           <h1 className="mt-4 max-w-3xl text-4xl font-medium tracking-[-0.04em] sm:text-5xl lg:text-6xl">
@@ -32,14 +32,16 @@ export default function ContactPage() {
       <section className="bg-white py-16 lg:py-24">
         <Container className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <h2 className="text-2xl font-medium tracking-[-0.03em]">SANRO Fibre Glass Industries</h2>
+            <h2 className="text-2xl font-medium tracking-[-0.03em]">
+              <span className="text-accent">SANRO</span> Fibre Glass Industries
+            </h2>
             <p className="mt-4 max-w-sm text-sm leading-6 text-muted">{company.description}</p>
             <ul className="mt-10 space-y-6">
               {details.map((item) => {
                 const Icon = item.icon
                 const content = (
                   <>
-                    <span className="mt-0.5 flex h-10 w-10 items-center justify-center border border-line">
+                    <span className="mt-0.5 flex h-10 w-10 items-center justify-center rounded-control bg-surface shadow-card">
                       <Icon size={16} strokeWidth={1.6} />
                     </span>
                     <span>
@@ -63,7 +65,7 @@ export default function ContactPage() {
             </ul>
             <p className="mt-8 text-sm text-muted">{company.hoursNote}</p>
           </div>
-          <div className="border border-line p-6 sm:p-10">
+          <div className="rounded-card bg-white p-6 shadow-card sm:p-10">
             <h2 className="text-xl font-medium tracking-[-0.02em]">Send an enquiry</h2>
             <p className="mt-2 mb-8 text-sm text-muted">All fields are required. We typically respond within one working day.</p>
             <EnquiryForm />

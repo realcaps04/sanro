@@ -5,7 +5,7 @@ import { CtaBand } from '../../components/sections/CtaBand'
 const sections = [
   {
     title: 'Who We Are',
-    text: 'SANRO Fibre Glass Industries is a manufacturer based in Marigiri, Idukki. We make premium fibre interior doors and allied fibre solutions for homes and commercial interiors across Kerala.',
+    text: 'SANRO Fibre Glass Industries is a manufacturer based in Thankamany, Idukki. We make premium fibre interior doors and allied fibre solutions for homes and commercial interiors across Kerala.',
   },
   {
     title: 'What We Do',
@@ -40,7 +40,7 @@ export default function AboutPage() {
         title="About SANRO Fibre Glass Industries"
         description="SANRO is a fibre manufacturer in Idukki, Kerala, focused on premium interior fibre doors, custom solutions and waterproofing."
       />
-      <section className="bg-surface pt-28 pb-16 lg:pt-32 lg:pb-20">
+      <section className="bg-white pt-28 pb-16 lg:pt-32 lg:pb-20">
         <Container className="grid items-end gap-10 lg:grid-cols-2">
           <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">About</p>
@@ -54,16 +54,16 @@ export default function AboutPage() {
           </p>
         </Container>
       </section>
-      <section className="bg-white">
-        <div className="grid lg:grid-cols-2">
-          <div className="min-h-[50vh] overflow-hidden bg-surface">
+      <section className="bg-white px-3 sm:px-4">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <div className="min-h-[50vh] overflow-hidden rounded-card bg-surface shadow-card">
             <img
               src="/images/brand/about.jpg"
               alt="SANRO manufacturing and design process"
               className="img-cover min-h-[50vh]"
             />
           </div>
-          <div className="min-h-[50vh] overflow-hidden bg-surface">
+          <div className="min-h-[50vh] overflow-hidden rounded-card bg-surface shadow-card">
             <img
               src="/images/factory/floor.jpg"
               alt="SANRO workshop floor"
@@ -75,7 +75,7 @@ export default function AboutPage() {
       <section className="bg-white py-16 lg:py-24">
         <Container className="grid gap-12 lg:grid-cols-2">
           {sections.map((section) => (
-            <article key={section.title} className="border-t border-line pt-8">
+            <article key={section.title} className="rounded-card bg-surface px-6 py-8 shadow-card">
               <h2 className="text-2xl font-medium tracking-[-0.03em]">{section.title}</h2>
               <p className="mt-4 text-[15px] leading-7 text-muted">{section.text}</p>
             </article>

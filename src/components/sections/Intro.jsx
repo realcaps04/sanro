@@ -7,10 +7,10 @@ export function Intro() {
     <section id="introduction" className="bg-white py-20 lg:py-28">
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
         <Reveal>
-          <div className="overflow-hidden bg-surface">
+          <div className="overflow-hidden rounded-card bg-surface shadow-card">
             <div className="aspect-[4/5] lg:aspect-[5/6]">
               <img
-                src="/images/doors/intro.jpg"
+                src="/images/doors/classic-01.jpg"
                 alt="SANRO fibre interior door in a residential interior"
                 className="img-cover"
               />
@@ -18,11 +18,13 @@ export function Intro() {
           </div>
         </Reveal>
         <Reveal delay={120}>
-          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">
-            SANRO Fibre Glass Industries
+          <p className="text-[12.5px] font-medium uppercase tracking-[0.28em] text-ink">
+            <span className="text-accent">SANRO</span> Fibre Glass Industries
           </p>
-          <h2 className="mt-5 max-w-md text-3xl font-medium leading-[1.15] tracking-[-0.03em] sm:text-4xl lg:text-[42px]">
-            Interior doors designed to become part of the architecture.
+          <h2 className="mt-5 max-w-xl text-[26px] font-medium leading-[1.2] tracking-[-0.03em] sm:text-[32px] lg:text-[36px]">
+            Interior doors designed
+            <br />
+            to become part of the architecture.
           </h2>
           <p className="mt-6 max-w-lg text-[15px] leading-7 text-muted">
             SANRO is a fibre manufacturer in Idukki, Kerala, focused on premium interior fibre doors. We make doors for
@@ -34,7 +36,7 @@ export function Intro() {
             for residential and commercial buildings.
           </p>
           <div className="mt-8">
-            <Button to="/about" variant="outline">
+            <Button to="/about" variant="static">
               About SANRO
             </Button>
           </div>
