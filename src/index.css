@@ -113,6 +113,11 @@ a:focus-visible {
   }
 }
 
+.bottom-nav {
+  bottom: 2.15rem;
+  bottom: calc(100lvh - 100dvh + 2.15rem + env(safe-area-inset-bottom, 0px));
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }

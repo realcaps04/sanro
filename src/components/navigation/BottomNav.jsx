@@ -14,11 +14,10 @@ const icons = {
 export function BottomNav() {
   return (
     <nav
-      className="fixed inset-x-3 z-50 lg:hidden"
-      style={{ bottom: 'max(0.85rem, env(safe-area-inset-bottom))' }}
+      className="bottom-nav fixed inset-x-3 z-50 lg:hidden"
       aria-label="Primary"
     >
-      <div className="flex items-stretch justify-between rounded-[1.35rem] bg-white px-1 py-1.5 shadow-[0_14px_40px_rgba(17,17,17,0.16)]">
+      <div className="flex items-stretch justify-between rounded-[2rem] bg-white px-1 py-1.5 shadow-[0_14px_40px_rgba(17,17,17,0.16)]">
         {navLinks.map((link) => {
           const Icon = icons[link.to]
           return (

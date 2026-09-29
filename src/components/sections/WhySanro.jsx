@@ -77,7 +77,7 @@ export function WhySanro() {
             ))}
           </div>
         ) : (
-          <div className="-mx-10 mt-8 overflow-hidden px-10 pt-4 pb-14">
+          <div className="mt-8 overflow-hidden pt-4 pb-14">
             <div
               className={`flex ${animate ? 'transition-transform duration-700 ease-out' : ''}`}
               style={{

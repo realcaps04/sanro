@@ -49,7 +49,7 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-[100svh] items-end overflow-hidden lg:items-center lg:justify-center">
+    <section className="relative flex min-h-[100svh] items-start overflow-hidden lg:items-center lg:justify-center">
       <img
         src="/images/gallery/hero_bg.png"
         alt="SANRO fibre interior door in a modern living space"
@@ -57,7 +57,7 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(17,17,17,0.28)_0%,rgba(17,17,17,0.08)_34%,rgba(17,17,17,0.22)_62%,rgba(17,17,17,0.45)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-24 bg-gradient-to-b from-transparent to-white" />
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-28 pb-28 text-center text-white lg:py-32">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-48 pb-16 text-center text-white lg:py-32">
         <p className="text-[12.5px] font-medium uppercase tracking-[0.32em] text-white/70">
           <span className="text-accent">SANRO</span> Fibre Glass Industries
         </p>
