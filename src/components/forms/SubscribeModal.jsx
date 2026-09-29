@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
-import { X } from 'lucide-react'
+import { ArrowRight, X } from 'lucide-react'
 import { usePresence } from '../../hooks/usePresence'
 import { connectWithGoogle, isValidEmail, subscribeWithEmail } from '../../utils/api'
-import { Button } from '../ui/Button'
 
 export function SubscribeModal({ open, onClose }) {
   const { mounted, active } = usePresence(open, 320)
@@ -65,7 +64,7 @@ export function SubscribeModal({ open, onClose }) {
       <button
         type="button"
         aria-label="Close registration"
-        className={`absolute inset-0 bg-ink/50 transition-opacity duration-300 ease-out ${active ? 'opacity-100' : 'opacity-0'}`}
+        className={`subscribe-backdrop absolute inset-0 bg-ink/50 ${active ? 'is-in' : ''}`}
         onClick={onClose}
       />
       <div
@@ -73,82 +72,106 @@ export function SubscribeModal({ open, onClose }) {
         aria-modal="true"
         aria-labelledby="subscribe-title"
         data-lenis-prevent
-        className={`no-scrollbar relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-card bg-white shadow-float transition-[opacity,transform] duration-300 ease-out sm:max-w-md sm:rounded-card ${
-          active ? 'opacity-100' : 'opacity-0'
+        className={`subscribe-panel no-scrollbar relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-[1.75rem] bg-white shadow-float sm:max-w-[440px] sm:rounded-[1.75rem] ${
+          active ? 'is-in' : ''
         }`}
-        style={{ transform: active ? 'translateY(0) scale(1)' : 'translateY(16px) scale(0.98)' }}
       >
-        <div className="flex items-start justify-between px-6 py-5 sm:px-8">
-          <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.24em] text-accent">Be with SANRO</p>
-            <h2 id="subscribe-title" className="mt-2 text-2xl font-medium tracking-[-0.03em]">
-              Stay close to what we make next.
-            </h2>
+        <div className="px-7 pt-7 pb-7 sm:px-9 sm:pt-9">
+          <div className="flex items-start justify-between gap-4">
+            <p className="flex items-center gap-2.5 text-[11px] font-medium uppercase tracking-[0.28em] text-accent">
+              <span>Be with</span>
+              <img src="/images/logo/sanro_logo.png" alt="SANRO" className="h-9 w-auto brightness-0" />
+            </p>
+            <button
+              type="button"
+              onClick={onClose}
+              className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-surface text-ink transition-colors hover:bg-ink hover:text-white"
+              aria-label="Close"
+            >
+              <X size={16} />
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-control bg-surface text-ink shadow-card transition-colors hover:bg-ink hover:text-white"
-            aria-label="Close"
-          >
-            <X size={18} />
-          </button>
-        </div>
-        <div className="px-6 pb-8 sm:px-8">
+          <h2 id="subscribe-title" className="mt-5 max-w-[12ch] text-[34px] font-medium leading-[1.05] tracking-[-0.04em]">
+            Stay close to what we make next.
+          </h2>
           {status === 'success' ? (
-            <div>
-              <p className="text-[15px] leading-7 text-muted">
-                You’re with SANRO. We’ll write when a new door, finish or project is ready to share.
-              </p>
-            </div>
+            <p className="mt-6 max-w-[32ch] text-[15px] leading-7 text-muted">
+              You’re with SANRO. We’ll write when a new door, finish or project is ready to share.
+            </p>
           ) : (
             <>
-              <p className="text-[15px] leading-7 text-muted">
-                Register with SANRO and hear about new fibre door designs, colours and finishes as they leave the
-                workshop. We’ll also share waterproofing notes and completed home projects — only when there is
-                something worth opening.
+              <p className="mt-5 text-[15px] leading-7 text-muted">
+                Register with SANRO — only when there is something worth opening.
               </p>
+              <ul className="mt-4 space-y-3">
+                {[
+                  'New fibre door designs, colours and finishes as they leave the workshop',
+                  'Waterproofing notes',
+                  'Completed home projects',
+                ].map((point) => (
+                  <li key={point} className="flex items-start gap-3 text-[15px] leading-6 text-muted">
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                    {point}
+                  </li>
+                ))}
+              </ul>
               <button
                 type="button"
                 onClick={onGoogle}
-                className="mt-6 flex w-full items-center justify-center gap-3 rounded-full bg-white py-3 text-[13px] font-medium text-ink shadow-card"
+                className="mt-8 flex w-full items-center justify-between rounded-full bg-ink py-1.5 pr-1.5 pl-5 text-[13px] font-medium text-white shadow-[0_10px_28px_rgba(17,17,17,0.18)]"
               >
-                <GoogleMark />
-                Connect with Google
+                <span className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white">
+                    <GoogleMark />
+                  </span>
+                  Connect with Google
+                </span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
+                  <ArrowRight size={15} strokeWidth={2.25} aria-hidden="true" />
+                </span>
               </button>
               {googleNote ? (
                 <p className="mt-3 text-sm leading-6 text-muted">
-                  Google sign-in will open once the account is linked. Leave your email below and your place is kept.
+                  Google sign-in will open once the account is linked. Leave your email and your place is kept.
                 </p>
               ) : null}
-              <div className="my-5 flex items-center gap-3 text-[11px] uppercase tracking-[0.18em] text-muted">
+              <div className="my-5 flex items-center gap-4 text-[12px] text-muted">
                 <span className="h-px flex-1 bg-line" />
                 or
                 <span className="h-px flex-1 bg-line" />
               </div>
               <form onSubmit={onSubmit}>
-                <label className="mb-2 block text-[11px] font-medium uppercase tracking-[0.18em] text-muted" htmlFor="subscribe-email">
+                <label className="sr-only" htmlFor="subscribe-email">
                   Email address
                 </label>
-                <input
-                  id="subscribe-email"
-                  type="email"
-                  value={email}
-                  onChange={(event) => {
-                    setEmail(event.target.value)
-                    if (error) setError('')
-                  }}
-                  autoComplete="email"
-                  placeholder="you@email.com"
-                  aria-invalid={Boolean(error)}
-                  className={`w-full rounded-control border-0 bg-surface px-4 py-3 text-sm text-ink outline-none placeholder:text-muted/70 ${
+                <div
+                  className={`flex items-center rounded-full bg-surface py-1.5 pr-1.5 pl-5 ${
                     error ? 'shadow-[0_0_0_2px_#ff5700]' : 'shadow-card'
                   }`}
-                />
-                {error ? <span className="mt-1.5 block text-xs text-accent">{error}</span> : null}
-                <Button type="submit" className="mt-4 w-full" disabled={status === 'submitting'}>
-                  {status === 'submitting' ? 'Saving…' : 'Subscribe'}
-                </Button>
+                >
+                  <input
+                    id="subscribe-email"
+                    type="email"
+                    value={email}
+                    onChange={(event) => {
+                      setEmail(event.target.value)
+                      if (error) setError('')
+                    }}
+                    autoComplete="email"
+                    placeholder="Email address"
+                    aria-invalid={Boolean(error)}
+                    className="min-w-0 flex-1 border-0 bg-transparent py-2 text-sm text-ink outline-none placeholder:text-muted/70"
+                  />
+                  <button
+                    type="submit"
+                    disabled={status === 'submitting'}
+                    aria-label={status === 'submitting' ? 'Saving' : 'Subscribe'}
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ink text-white disabled:opacity-50"
+                  >
+                    <ArrowRight size={15} strokeWidth={2.25} aria-hidden="true" />
+                  </button>
+                </div>
+                {error ? <span className="mt-2 block px-2 text-xs text-accent">{error}</span> : null}
               </form>
             </>
           )}
@@ -160,7 +183,7 @@ export function SubscribeModal({ open, onClose }) {
 
 function GoogleMark() {
   return (
-    <svg width="16" height="16" viewBox="0 0 18 18" aria-hidden="true">
+    <svg width="14" height="14" viewBox="0 0 18 18" aria-hidden="true">
       <path
         fill="#4285F4"
         d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"

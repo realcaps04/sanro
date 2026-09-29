@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Menu, UserPlus } from 'lucide-react'
+import { UserPlus } from 'lucide-react'
 import { navLinks } from '../../data/company'
 import { useScrolled } from '../../hooks/useScrolled'
 import { useQuote } from '../../context/QuoteContext'
-import { MobileMenu } from '../navigation/MobileMenu'
+import { BottomNav } from '../navigation/BottomNav'
 import { SubscribeModal } from '../forms/SubscribeModal'
 import { Button } from '../ui/Button'
 
@@ -12,13 +12,8 @@ export function Header() {
   const scrolled = useScrolled(16)
   const { pathname } = useLocation()
   const { openQuote } = useQuote()
-  const [menuOpen, setMenuOpen] = useState(false)
   const [subscribeOpen, setSubscribeOpen] = useState(false)
   const overHero = pathname === '/' && !scrolled
-
-  useEffect(() => {
-    setMenuOpen(false)
-  }, [pathname])
 
   return (
     <>
@@ -83,20 +78,10 @@ export function Header() {
             >
               <UserPlus size={16} strokeWidth={2} aria-hidden="true" />
             </button>
-            <button
-              type="button"
-              className={`flex h-10 w-10 items-center justify-center rounded-control shadow-float lg:hidden ${
-                overHero ? 'bg-white/15 text-white' : 'bg-white text-ink'
-              }`}
-              onClick={() => setMenuOpen(true)}
-              aria-label="Open menu"
-            >
-              <Menu size={18} />
-            </button>
           </div>
         </div>
       </header>
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} onQuote={() => openQuote()} />
+      <BottomNav />
       <SubscribeModal open={subscribeOpen} onClose={() => setSubscribeOpen(false)} />
     </>
   )

@@ -2,6 +2,7 @@ import { Clock, Mail, MapPin, Phone } from 'lucide-react'
 import { Seo } from '../../components/ui/Seo'
 import { Container } from '../../components/ui/Container'
 import { EnquiryForm } from '../../components/forms/EnquiryForm'
+import { WorkshopMap } from '../../components/ui/WorkshopMap'
 import { company } from '../../data/company'
 
 const details = [
@@ -70,6 +71,11 @@ export default function ContactPage() {
             <p className="mt-2 mb-8 text-sm text-muted">All fields are required. We typically respond within one working day.</p>
             <EnquiryForm />
           </div>
+        </Container>
+      </section>
+      <section className="bg-white pb-16 lg:pb-24">
+        <Container>
+          <WorkshopMap />
         </Container>
       </section>
     </>

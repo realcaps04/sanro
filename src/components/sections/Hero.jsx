@@ -49,23 +49,21 @@ export function Hero() {
   }
 
   return (
-    <section className="relative flex min-h-[100svh] items-center justify-center overflow-hidden bg-ink">
+    <section className="relative flex min-h-[100svh] items-end overflow-hidden lg:items-center lg:justify-center">
       <img
         src="/images/gallery/hero_bg.png"
         alt="SANRO fibre interior door in a modern living space"
         className="absolute inset-0 h-full w-full object-cover object-center"
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-ink/12 to-transparent" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(17,17,17,0.18)_0%,rgba(17,17,17,0.06)_38%,transparent_62%)]" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-44 bg-gradient-to-b from-transparent via-white/80 to-white sm:h-60" />
-      <div className="relative z-10 mx-auto max-w-5xl px-5 py-32 text-center text-white">
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(17,17,17,0.28)_0%,rgba(17,17,17,0.08)_34%,rgba(17,17,17,0.22)_62%,rgba(17,17,17,0.45)_100%)]" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-24 bg-gradient-to-b from-transparent to-white" />
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-28 pb-28 text-center text-white lg:py-32">
         <p className="text-[12.5px] font-medium uppercase tracking-[0.32em] text-white/70">
           <span className="text-accent">SANRO</span> Fibre Glass Industries
         </p>
-        <h1 className="mt-6 text-[40px] font-bold leading-[1.08] tracking-[-0.03em] sm:text-6xl lg:text-[76px]">
-          Make your interior more
-          <br />
-          minimalistic &amp; modern
+        <h1 className="mt-6 text-[clamp(1.65rem,calc((100vw-2.75rem)/10.55),4.75rem)] font-bold leading-[1.02] tracking-[-0.045em] lg:text-[76px]">
+          <span className="block whitespace-nowrap">Make your interior more</span>
+          <span className="block whitespace-nowrap">minimalistic &amp; modern</span>
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-[15px] leading-7 text-white/80 sm:text-base">
           Premium fibre interior doors designed for durability, refined aesthetics and everyday living.
@@ -103,7 +101,7 @@ export function Hero() {
       </div>
       <a
         href="#introduction"
-        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/70"
+        className="absolute bottom-24 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-white/70 lg:bottom-8"
         aria-label="Scroll to introduction"
       >
         <ChevronDown size={18} className="animate-pulse" />

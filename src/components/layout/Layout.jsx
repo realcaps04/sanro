@@ -34,7 +34,7 @@ export function Layout() {
       }}
     >
       <ScrollRestore />
-      <div className="min-h-screen bg-white text-ink">
+      <div className="min-h-screen bg-white pb-24 text-ink lg:pb-0">
         <Header />
         <main>
           <Outlet />
