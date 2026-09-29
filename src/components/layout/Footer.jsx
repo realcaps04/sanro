@@ -5,8 +5,8 @@ import { Container } from '../ui/Container'
 export function Footer() {
   return (
     <footer className="bg-white">
-      <Container className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8 lg:py-20">
-        <div>
+      <Container className="grid grid-cols-2 gap-x-8 gap-y-12 py-16 lg:grid-cols-4 lg:gap-8 lg:py-20">
+        <div className="col-span-2 lg:col-span-1">
           <img
             src="/images/logo/sanro_logo.png"
             alt="SANRO Fibre Doors"
@@ -43,7 +43,7 @@ export function Footer() {
             </li>
           </ul>
         </div>
-        <div>
+        <div className="col-span-2 lg:col-span-1">
           <p className="text-[11px] font-medium uppercase tracking-[0.22em] text-ink">Contact</p>
           <ul className="mt-5 space-y-3 text-sm leading-6 text-muted">
             <li>
