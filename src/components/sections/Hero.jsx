@@ -57,7 +57,7 @@ export function Hero() {
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(17,17,17,0.28)_0%,rgba(17,17,17,0.08)_34%,rgba(17,17,17,0.22)_62%,rgba(17,17,17,0.45)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-24 bg-gradient-to-b from-transparent to-white" />
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-48 pb-16 text-center text-white lg:py-32">
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-64 pb-16 text-center text-white lg:py-32">
         <p className="text-[12.5px] font-medium uppercase tracking-[0.32em] text-white/70">
           <span className="text-accent">SANRO</span> Fibre Glass Industries
         </p>
@@ -65,12 +65,13 @@ export function Hero() {
           <span className="block whitespace-nowrap">Make your interior more</span>
           <span className="block whitespace-nowrap">minimalistic &amp; modern</span>
         </h1>
-        <p className="mx-auto mt-6 max-w-xl text-[15px] leading-7 text-white/80 sm:text-base">
-          Premium fibre interior doors designed for durability, refined aesthetics and everyday living.
+        <p className="mx-auto mt-6 text-[clamp(0.7rem,calc((100vw-2.75rem)/24),1.0625rem)] leading-snug text-white/80">
+          <span className="block whitespace-nowrap">Premium fibre interior doors designed for</span>
+          <span className="block whitespace-nowrap">durability, refined aesthetics and everyday living.</span>
         </p>
         <form
           onSubmit={onSearch}
-          className="mx-auto mt-10 flex w-full max-w-lg items-center rounded-full border border-white/55 bg-white/10 py-1.5 pr-1.5 pl-5 shadow-[0_8px_32px_rgba(0,0,0,0.28)] backdrop-blur-xl backdrop-saturate-150"
+          className="mx-auto mt-[calc(2.5rem+2.5vh)] flex w-full max-w-lg items-center rounded-full border border-white/55 bg-white/10 py-1.5 pr-1.5 pl-5 shadow-[0_8px_32px_rgba(0,0,0,0.28)] backdrop-blur-xl backdrop-saturate-150"
         >
           <label className="sr-only" htmlFor="hero-search">
             Search
