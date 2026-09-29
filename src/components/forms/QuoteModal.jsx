@@ -1,13 +1,15 @@
 import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import { useQuote } from '../../context/QuoteContext'
+import { usePresence } from '../../hooks/usePresence'
 import { EnquiryForm } from './EnquiryForm'
 
 export function QuoteModal() {
   const { open, closeQuote, interest } = useQuote()
+  const { mounted, active } = usePresence(open, 320)
 
   useEffect(() => {
-    if (!open) return undefined
+    if (!mounted) return undefined
     const previous = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     const onKey = (event) => {
@@ -18,16 +20,16 @@ export function QuoteModal() {
       document.body.style.overflow = previous
       window.removeEventListener('keydown', onKey)
     }
-  }, [open, closeQuote])
+  }, [mounted, closeQuote])
 
-  if (!open) return null
+  if (!mounted) return null
 
   return (
     <div className="fixed inset-0 z-[80] flex items-end justify-center sm:items-center">
       <button
         type="button"
         aria-label="Close enquiry"
-        className="absolute inset-0 bg-ink/50"
+        className={`absolute inset-0 bg-ink/50 transition-opacity duration-300 ease-out ${active ? 'opacity-100' : 'opacity-0'}`}
         onClick={closeQuote}
       />
       <div
@@ -35,7 +37,10 @@ export function QuoteModal() {
         aria-modal="true"
         aria-labelledby="quote-title"
         data-lenis-prevent
-        className="no-scrollbar relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-card bg-white shadow-float sm:max-w-xl sm:rounded-card"
+        className={`no-scrollbar relative z-10 max-h-[92vh] w-full overflow-y-auto rounded-t-card bg-white shadow-float transition-[opacity,transform] duration-300 ease-out sm:max-w-xl sm:rounded-card ${
+          active ? 'opacity-100' : 'opacity-0'
+        }`}
+        style={{ transform: active ? 'translateY(0) scale(1)' : 'translateY(16px) scale(0.98)' }}
       >
         <div className="flex items-start justify-between px-6 py-5 sm:px-8">
           <div>

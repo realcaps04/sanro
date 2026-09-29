@@ -60,15 +60,15 @@ export function WaterproofingTeaser() {
               }}
             >
               {loop.map((item, itemIndex) => (
-                <div key={`${item.title}-${itemIndex}`} className="px-2" style={{ width: `${100 / loop.length}%` }}>
-                  <div className="overflow-hidden rounded-card bg-white shadow-card">
+                <div key={`${item.title}-${itemIndex}`} className="h-full px-2" style={{ width: `${100 / loop.length}%` }}>
+                  <div className="flex h-full flex-col overflow-hidden rounded-card bg-white">
                     <div className="aspect-[16/10] overflow-hidden">
                       <img src={item.image} alt="" className="img-cover" />
                     </div>
                     <div className="flex items-start justify-between gap-3 px-4 py-4">
-                      <div>
+                      <div className="min-w-0">
                         <h3 className="text-[15px] font-medium">{item.title}</h3>
-                        <p className="mt-2 text-sm leading-6 text-muted">{item.text}</p>
+                        <p className="mt-2 line-clamp-3 min-h-[4.5rem] text-sm leading-6 text-muted">{item.text}</p>
                       </div>
                       <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-accent text-white">
                         <ArrowUpRight size={15} strokeWidth={2} aria-hidden="true" />

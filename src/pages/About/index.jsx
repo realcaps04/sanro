@@ -40,37 +40,33 @@ export default function AboutPage() {
         title="About SANRO Fibre Glass Industries"
         description="SANRO is a fibre manufacturer in Idukki, Kerala, focused on premium interior fibre doors, custom solutions and waterproofing."
       />
-      <section className="bg-white pt-28 pb-16 lg:pt-32 lg:pb-20">
-        <Container className="grid items-end gap-10 lg:grid-cols-2">
-          <div>
-            <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">About</p>
-            <h1 className="mt-4 max-w-xl text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
-              A manufacturer of interior fibre doors.
-            </h1>
-          </div>
-          <p className="max-w-lg text-[15px] leading-7 text-muted">
+      <section className="bg-white pt-28 pb-12 lg:pt-32 lg:pb-16">
+        <Container>
+          <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-accent">About</p>
+          <p className="mt-6 max-w-2xl text-[15px] leading-7 text-muted">
             SANRO was built around a simple observation: in Kerala, a door has to survive the climate as well as serve
             the interior. Fibre, specified properly, does both.
           </p>
+          <h1 className="mt-8 max-w-xl text-4xl font-medium tracking-[-0.04em] sm:text-5xl">
+            A manufacturer of interior fibre doors.
+          </h1>
         </Container>
       </section>
-      <section className="bg-white px-3 sm:px-4">
-        <div className="grid gap-4 lg:grid-cols-2">
-          <div className="min-h-[50vh] overflow-hidden rounded-card bg-surface shadow-card">
-            <img
-              src="/images/brand/about.jpg"
-              alt="SANRO manufacturing and design process"
-              className="img-cover min-h-[50vh]"
-            />
+      <section className="bg-white pb-4">
+        <Container>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="aspect-[16/10] overflow-hidden rounded-card bg-surface shadow-card">
+              <img
+                src="/images/brand/about.jpg"
+                alt="SANRO manufacturing and design process"
+                className="img-cover"
+              />
+            </div>
+            <div className="aspect-[16/10] overflow-hidden rounded-card bg-surface shadow-card">
+              <img src="/images/factory/floor.jpg" alt="SANRO workshop floor" className="img-cover" />
+            </div>
           </div>
-          <div className="min-h-[50vh] overflow-hidden rounded-card bg-surface shadow-card">
-            <img
-              src="/images/factory/floor.jpg"
-              alt="SANRO workshop floor"
-              className="img-cover min-h-[50vh]"
-            />
-          </div>
-        </div>
+        </Container>
       </section>
       <section className="bg-white py-16 lg:py-24">
         <Container className="grid gap-12 lg:grid-cols-2">

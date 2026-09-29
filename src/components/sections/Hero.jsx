@@ -8,19 +8,21 @@ export function Hero() {
   const [placeholder, setPlaceholder] = useState('')
 
   useEffect(() => {
-    const phrase = 'Search doors'
+    const phrases = ['Search doors', 'Search waterproofing', 'Search custom doors', 'Search fibre doors']
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduce) {
-      setPlaceholder(phrase)
+      setPlaceholder(phrases[0])
       return
     }
 
+    let phraseIndex = 0
     let index = 0
     let timer
     let cancelled = false
 
     function write(deleting) {
       if (cancelled) return
+      const phrase = phrases[phraseIndex]
       if (!deleting) {
         index += 1
         setPlaceholder(phrase.slice(0, index))
@@ -29,6 +31,7 @@ export function Hero() {
       }
       index -= 1
       setPlaceholder(phrase.slice(0, index))
+      if (index === 0) phraseIndex = (phraseIndex + 1) % phrases.length
       timer = setTimeout(() => write(index > 0), index === 0 ? 420 : 48)
     }
 
@@ -72,7 +75,7 @@ export function Hero() {
           className="mx-auto mt-10 flex w-full max-w-lg items-center rounded-full border border-white/55 bg-white/10 py-1.5 pr-1.5 pl-5 shadow-[0_8px_32px_rgba(0,0,0,0.28)] backdrop-blur-xl backdrop-saturate-150"
         >
           <label className="sr-only" htmlFor="hero-search">
-            Search doors
+            Search
           </label>
           <div className="relative min-w-0 flex-1">
             {query === '' ? (
@@ -91,7 +94,7 @@ export function Hero() {
           </div>
           <button
             type="submit"
-            aria-label="Search doors"
+            aria-label="Search"
             className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-white transition-colors hover:bg-accent-dark"
           >
             <Search size={18} strokeWidth={2} />

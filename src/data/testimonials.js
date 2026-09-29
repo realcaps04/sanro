@@ -11,7 +11,7 @@ export const testimonials = [
   {
     id: 't2',
     quote:
-      'We specified SANRO across an apartment project. The finish consistency from leaf to leaf was what sold the client.',
+      'We specified SANRO across a home project. The finish consistency from leaf to leaf was what sold the client.',
     name: 'Ajith Emmanuel',
     role: 'Idukki, Kerala',
     image: '/images/reviews/R2.png',

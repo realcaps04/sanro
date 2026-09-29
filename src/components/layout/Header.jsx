@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Menu } from 'lucide-react'
+import { Menu, UserPlus } from 'lucide-react'
 import { navLinks } from '../../data/company'
 import { useScrolled } from '../../hooks/useScrolled'
 import { useQuote } from '../../context/QuoteContext'
 import { MobileMenu } from '../navigation/MobileMenu'
+import { SubscribeModal } from '../forms/SubscribeModal'
 import { Button } from '../ui/Button'
 
 export function Header() {
@@ -12,6 +13,7 @@ export function Header() {
   const { pathname } = useLocation()
   const { openQuote } = useQuote()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [subscribeOpen, setSubscribeOpen] = useState(false)
   const overHero = pathname === '/' && !scrolled
 
   useEffect(() => {
@@ -71,6 +73,18 @@ export function Header() {
             </Button>
             <button
               type="button"
+              onClick={() => setSubscribeOpen(true)}
+              aria-label="Register with SANRO"
+              className={`flex h-10 w-10 items-center justify-center rounded-full transition-colors ${
+                overHero
+                  ? 'border border-white/55 bg-white/10 text-white backdrop-blur-xl'
+                  : 'bg-ink text-white shadow-[0_10px_28px_rgba(17,17,17,0.18)]'
+              }`}
+            >
+              <UserPlus size={16} strokeWidth={2} aria-hidden="true" />
+            </button>
+            <button
+              type="button"
               className={`flex h-10 w-10 items-center justify-center rounded-control shadow-float lg:hidden ${
                 overHero ? 'bg-white/15 text-white' : 'bg-white text-ink'
               }`}
@@ -83,6 +97,7 @@ export function Header() {
         </div>
       </header>
       <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} onQuote={() => openQuote()} />
+      <SubscribeModal open={subscribeOpen} onClose={() => setSubscribeOpen(false)} />
     </>
   )
 }

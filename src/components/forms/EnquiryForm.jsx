@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { ArrowRight, ChevronDown } from 'lucide-react'
 import { isValidEmail, isValidPhone, submitEnquiry } from '../../utils/api'
 import { enquiryInterests } from '../../data/company'
+import { usePresence } from '../../hooks/usePresence'
 
 const empty = {
   name: '',
@@ -19,7 +20,7 @@ function fieldError(field, value) {
     if (!/^[A-Za-z][A-Za-z .'-]*$/.test(text)) return 'Name can use letters only.'
   }
   if (field === 'phone' && !isValidPhone(text)) return 'Enter a valid 10-digit mobile number.'
-  if (field === 'email' && !isValidEmail(text)) return 'Enter a valid email address.'
+  if (field === 'email' && text && !isValidEmail(text)) return 'Enter a valid email address.'
   if (field === 'location' && text.length < 2) return 'Please enter your city or district.'
   if (field === 'interest' && !text) return 'Select what you are interested in.'
   if (field === 'message' && text.length < 10) return 'Please add a short message (10+ characters).'
@@ -121,7 +122,7 @@ export function EnquiryForm({ defaultInterest = 'Interior Doors', onSuccess, com
         </Field>
       </div>
       <div className="grid gap-4 sm:grid-cols-2">
-        <Field label="Email" error={errors.email}>
+        <Field label="Email (optional)" error={errors.email}>
           <input
             className={inputClass('email')}
             type="email"
@@ -132,7 +133,6 @@ export function EnquiryForm({ defaultInterest = 'Interior Doors', onSuccess, com
             placeholder="you@email.com"
             aria-invalid={Boolean(errors.email)}
             maxLength={80}
-            required
           />
         </Field>
         <Field label="Location" error={errors.location}>
@@ -197,6 +197,7 @@ function Field({ label, error, children }) {
 
 function InterestSelect({ value, options, onChange, onBlur, className }) {
   const [open, setOpen] = useState(false)
+  const { mounted, active } = usePresence(open, 180)
   const rootRef = useRef(null)
 
   useEffect(() => {
@@ -219,8 +220,15 @@ function InterestSelect({ value, options, onChange, onBlur, className }) {
         <span>{value}</span>
         <ChevronDown size={16} className={`shrink-0 text-muted transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
-      {open ? (
-        <ul role="listbox" aria-label="Interested in" className="mt-2 rounded-control bg-white p-1.5 shadow-float">
+      {mounted ? (
+        <ul
+          role="listbox"
+          aria-label="Interested in"
+          className={`mt-2 origin-top rounded-control bg-white p-1.5 shadow-float transition-[opacity,transform] duration-200 ease-out ${
+            active ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ transform: active ? 'translateY(0) scale(1)' : 'translateY(6px) scale(0.98)' }}
+        >
           {options.map((item) => {
             const selected = item === value
             return (
