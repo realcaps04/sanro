@@ -53,7 +53,7 @@ export function Header() {
                   }`
                 }
               >
-                {link.label}
+                {link.to === '/products' ? 'Collections' : link.label}
               </NavLink>
             ))}
           </nav>

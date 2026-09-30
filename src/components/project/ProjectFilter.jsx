@@ -21,6 +21,7 @@ const icons = {
   Interior: Sofa,
   Interiors: Sofa,
   Waterproofing: Droplets,
+  Waterproof: Droplets,
   Custom: SlidersHorizontal,
   Modern: Sparkles,
   Classic: Columns3,
@@ -33,7 +34,7 @@ const icons = {
 
 export function ProjectFilter({ filters, active, onChange }) {
   return (
-    <div className="grid grid-cols-2 gap-3">
+    <div className="grid grid-cols-2 gap-3 lg:flex">
       {filters.map((filter) => {
         const isActive = filter === active
         const Icon = icons[filter] ?? LayoutGrid
@@ -43,7 +44,7 @@ export function ProjectFilter({ filters, active, onChange }) {
             type="button"
             onClick={() => onChange(filter)}
             aria-pressed={isActive}
-            className="flex w-full items-center justify-between rounded-full bg-ink py-1.5 pr-1.5 pl-5 text-[13px] font-medium tracking-normal text-white shadow-[0_10px_28px_rgba(17,17,17,0.18),0_18px_40px_rgba(17,17,17,0.12)]"
+            className="flex w-full items-center justify-between rounded-full bg-ink py-1.5 pr-1.5 pl-5 text-[13px] font-medium tracking-normal text-white shadow-[0_10px_28px_rgba(17,17,17,0.18),0_18px_40px_rgba(17,17,17,0.12)] lg:min-w-0 lg:flex-1"
           >
             {filter}
             <span

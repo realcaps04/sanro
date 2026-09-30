@@ -1,4 +1,4 @@
-export const productCategories = ['Modern', 'Classic', 'Designer', 'Minimal', 'Custom']
+export const productCategories = ['Modern', 'Classic', 'Designer', 'Minimal', 'Waterproof', 'Custom']
 
 export const products = [
   {
