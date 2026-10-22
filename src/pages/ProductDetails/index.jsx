@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { lazy, Suspense, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Seo } from '../../components/ui/Seo'
 import { Container } from '../../components/ui/Container'
@@ -8,12 +8,17 @@ import { CtaBand } from '../../components/sections/CtaBand'
 import { getProductBySlug, getRelatedProducts } from '../../data/products'
 import { useQuote } from '../../context/QuoteContext'
 
+const DoorArViewer = lazy(() =>
+  import('../../components/product/DoorArViewer').then((mod) => ({ default: mod.DoorArViewer })),
+)
+
 export default function ProductDetailsPage() {
   const { slug } = useParams()
   const product = getProductBySlug(slug)
   const related = getRelatedProducts(slug)
   const { openQuote } = useQuote()
   const [active, setActive] = useState(0)
+  const [arOpen, setArOpen] = useState(false)
 
   if (!product) {
     return (
@@ -27,6 +32,7 @@ export default function ProductDetailsPage() {
   }
 
   const gallery = product.gallery ?? [product.image]
+  const isDoor = product.category !== 'Waterproof'
 
   return (
     <>
@@ -37,7 +43,7 @@ export default function ProductDetailsPage() {
       <section className="bg-white pt-28 pb-20 lg:pt-32 lg:pb-28">
         <Container className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
           <div>
-            <div className="overflow-hidden rounded-card bg-surface shadow-card">
+            <div className="relative overflow-hidden rounded-card bg-surface shadow-card">
               <div className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
                 <img
                   src={gallery[active]}
@@ -45,6 +51,15 @@ export default function ProductDetailsPage() {
                   className="img-cover"
                 />
               </div>
+              {isDoor ? (
+                <button
+                  type="button"
+                  onClick={() => setArOpen(true)}
+                  className="absolute bottom-4 left-4 rounded-full bg-ink/80 px-4 py-2 text-[12px] font-medium tracking-normal text-white shadow-float backdrop-blur-sm transition-colors hover:bg-accent sm:bottom-5 sm:left-5"
+                >
+                  View in your room
+                </button>
+              ) : null}
             </div>
             {gallery.length > 1 ? (
               <div className="mt-3 grid grid-cols-4 gap-3">
@@ -106,6 +121,11 @@ export default function ProductDetailsPage() {
             </dl>
             <div className="mt-10 flex flex-wrap gap-3">
               <Button onClick={() => openQuote('Interior Doors')}>Request a Quote</Button>
+              {isDoor ? (
+                <Button variant="outline" onClick={() => setArOpen(true)}>
+                  View in your room
+                </Button>
+              ) : null}
               <Button to="/contact" variant="outline">
                 Contact
               </Button>
@@ -126,6 +146,15 @@ export default function ProductDetailsPage() {
         </section>
       ) : null}
       <CtaBand />
+      {arOpen && isDoor ? (
+        <Suspense fallback={null}>
+          <DoorArViewer
+            imageUrl={product.image}
+            productName={product.name}
+            onClose={() => setArOpen(false)}
+          />
+        </Suspense>
+      ) : null}
     </>
   )
 }

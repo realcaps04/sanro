@@ -76,7 +76,7 @@ export const projects = [
     description:
       'A residential terrace had a history of seepage into the rooms below. SANRO specified and executed terrace waterproofing together with bathroom wet-area treatment, coordinated with door replacement in the affected rooms.',
     image: '/images/projects/water-01.jpg',
-    images: ['/images/projects/water-01.jpg', '/images/waterproofing/terrace.jpg', '/images/waterproofing/bathroom.jpg'],
+    images: ['/images/projects/water-01.jpg', '/images/waterproofing/Rooftop Waterproofing with Scenic Mountain Views (1).png', '/images/waterproofing/card-bathroom.jpg'],
     year: '2025',
   },
 ]

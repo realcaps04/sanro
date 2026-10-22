@@ -17,7 +17,7 @@ export default function WaterproofingPage() {
       <section className="bg-white px-3 pt-3 sm:px-4 sm:pt-4">
       <div className="relative min-h-[70vh] overflow-hidden rounded-card bg-ink shadow-float">
         <img
-          src="/images/waterproofing/hero.jpg"
+          src="/images/waterproofing/Rooftop Waterproofing with Scenic Mountain Views (1).png"
           alt="Residential building envelope prepared for waterproofing"
           className="absolute inset-0 h-full w-full object-cover opacity-70"
         />

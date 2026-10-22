@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import { Seo } from '../../components/ui/Seo'
 import { Container } from '../../components/ui/Container'
 import { ProductGrid } from '../../components/product/ProductGrid'
+import { CustomRequestCard } from '../../components/product/CustomRequestCard'
 import { CtaBand } from '../../components/sections/CtaBand'
 import { productCategories, products } from '../../data/products'
 import { ProjectFilter } from '../../components/project/ProjectFilter'
@@ -62,8 +63,11 @@ export default function ProductsPage() {
       </section>
       <section className="bg-white py-16 lg:py-24">
         <Container>
-          {list.length ? (
-            <ProductGrid products={list} />
+          {list.length || category === 'Custom' ? (
+            <ProductGrid
+              products={list}
+              trailing={category === 'Custom' ? <CustomRequestCard /> : null}
+            />
           ) : (
             <p className="text-sm text-muted">No doors match that search. Try a style such as Modern, Classic, or Bathroom.</p>
           )}

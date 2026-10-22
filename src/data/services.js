@@ -20,7 +20,7 @@ export const services = [
     summary: 'Residential and commercial waterproofing solutions that sit alongside our manufacturing work.',
     description:
       'SANRO provides professional waterproofing for terraces, roofs, bathrooms, walls and leakage treatment. The work is specified to protect the building envelope — not as an afterthought to the door.',
-    image: '/images/waterproofing/hero.jpg',
+    image: '/images/waterproofing/Rooftop Waterproofing with Scenic Mountain Views (1).png',
     items: [
       'Terrace waterproofing',
       'Roof waterproofing',
@@ -64,12 +64,12 @@ export const waterproofingServices = [
   {
     title: 'Terrace Waterproofing',
     text: 'Protects exposed terraces from standing water and seasonal monsoon ingress.',
-    image: '/images/waterproofing/card-terrace.jpg',
+    image: '/images/waterproofing/Rooftop Waterproofing with Scenic Mountain Views (1).png',
   },
   {
     title: 'Roof Waterproofing',
     text: 'Specified for sloped and flat roofs where leaks travel far before they are seen.',
-    image: '/images/waterproofing/card-roof.jpg',
+    image: '/images/waterproofing/Rooftop Waterproofing with Scenic Mountain Views (1).png',
   },
   {
     title: 'Bathroom Waterproofing',
@@ -79,17 +79,17 @@ export const waterproofingServices = [
   {
     title: 'Wall Waterproofing',
     text: 'Addresses damp walls, seepage and moisture tracking through masonry.',
-    image: '/images/waterproofing/card-wall.jpg',
+    image: '/images/waterproofing/card-bathroom.jpg',
   },
   {
     title: 'Leakage Treatment',
     text: 'Diagnostic treatment for active leaks in residential and commercial buildings.',
-    image: '/images/waterproofing/card-leak.jpg',
+    image: '/images/waterproofing/Rooftop Waterproofing with Scenic Mountain Views (1).png',
   },
   {
     title: 'Commercial Waterproofing',
     text: 'Larger envelopes — offices, institutions and mixed-use buildings — specified as a system.',
-    image: '/images/waterproofing/card-commercial.jpg',
+    image: '/images/waterproofing/Rooftop Waterproofing with Scenic Mountain Views (1).png',
   },
 ]
 
