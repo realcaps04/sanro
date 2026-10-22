@@ -14,20 +14,56 @@ export async function isArSupported() {
   }
 }
 
-export function createDoorTexture(imageUrl) {
-  const loader = new THREE.TextureLoader()
+/**
+ * Load a door-only texture. Prefer product.arImage (cropped leaf) over lifestyle photos.
+ * Optional crop: { x, y, w, h } as 0–1 fractions of the source image.
+ */
+export function createDoorTexture(imageUrl, crop = null) {
   return new Promise((resolve, reject) => {
-    loader.load(
-      imageUrl,
-      (texture) => {
+    const image = new Image()
+    image.crossOrigin = 'anonymous'
+    image.onload = () => {
+      try {
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+
+        let sx = 0
+        let sy = 0
+        let sw = image.naturalWidth
+        let sh = image.naturalHeight
+
+        if (crop) {
+          sx = Math.round(crop.x * image.naturalWidth)
+          sy = Math.round(crop.y * image.naturalHeight)
+          sw = Math.round(crop.w * image.naturalWidth)
+          sh = Math.round(crop.h * image.naturalHeight)
+        }
+
+        // Output at door aspect so the mesh isn’t letterboxed with room leftovers
+        const outW = 512
+        const outH = Math.round(outW * (DOOR_HEIGHT_M / DOOR_WIDTH_M))
+        canvas.width = outW
+        canvas.height = outH
+        ctx.clearRect(0, 0, outW, outH)
+        ctx.drawImage(image, sx, sy, sw, sh, 0, 0, outW, outH)
+
+        const texture = new THREE.CanvasTexture(canvas)
         texture.colorSpace = THREE.SRGBColorSpace
         texture.anisotropy = 8
+        texture.needsUpdate = true
         resolve(texture)
-      },
-      undefined,
-      reject,
-    )
+      } catch (err) {
+        reject(err)
+      }
+    }
+    image.onerror = () => reject(new Error(`Failed to load door image: ${imageUrl}`))
+    image.src = imageUrl
   })
+}
+
+export function getProductArImage(product) {
+  if (!product) return null
+  return product.arImage || product.image
 }
 
 export function createDoorMesh(texture) {
@@ -36,6 +72,8 @@ export function createDoorMesh(texture) {
     map: texture,
     roughness: 0.55,
     metalness: 0.05,
+    transparent: true,
+    alphaTest: 0.08,
   })
   const edge = new THREE.MeshStandardMaterial({
     color: 0x2a2a2a,

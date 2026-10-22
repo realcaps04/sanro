@@ -149,7 +149,7 @@ export default function ProductDetailsPage() {
       {arOpen && isDoor ? (
         <Suspense fallback={null}>
           <DoorArViewer
-            imageUrl={product.image}
+            imageUrl={product.arImage || product.image}
             productName={product.name}
             onClose={() => setArOpen(false)}
           />

@@ -11,6 +11,7 @@ export const products = [
     description:
       'SANRO Modern 01 is a light oak fibre door with a quiet run of horizontal grooves. It is moulded for humid climates and finished so the grain stays even across the leaf.',
     image: '/images/doors/classic-02.jpg',
+    arImage: '/images/doors/ar/classic-02.png',
     gallery: ['/images/doors/classic-02.jpg', '/images/doors/customise.jpg', '/images/doors/classic-01.jpg'],
     finishes: ['Light Oak', 'Warm Oak', 'Graphite', 'Custom colour'],
     design: 'Horizontal groove face in a light oak tone, with a matching frame.',
@@ -34,6 +35,7 @@ export const products = [
     description:
       'Modern 02 introduces a shallow two-panel geometry for interiors that want a little more definition without returning to traditional moulding. The fibre construction holds its lines through Kerala’s wet and dry seasons.',
     image: '/images/doors/custom-02.jpg',
+    arImage: '/images/doors/ar/custom-02.png',
     gallery: ['/images/doors/custom-02.jpg', '/images/doors/customise.jpg', '/images/doors/designer-01.jpg'],
     finishes: ['Stone Grey', 'Ivory', 'Teak Tone', 'Custom colour'],
     design: 'Shallow two-panel geometry with a clean stiles-and-rails silhouette.',
@@ -56,6 +58,7 @@ export const products = [
     description:
       'Modern 03 is proportioned for spaces with height. A single vertical recess draws the eye upward without ornament, keeping the door calm, precise and architectural.',
     image: '/images/doors/designer-01.jpg',
+    arImage: '/images/doors/ar/designer-01.png',
     gallery: ['/images/doors/designer-01.jpg', '/images/doors/custom-02.jpg', '/images/doors/customise.jpg'],
     finishes: ['Soft Black', 'Warm White', 'Walnut Tone'],
     design: 'Single vertical recess. Slim perimeter frame. Optional matching architrave.',
@@ -79,6 +82,7 @@ export const products = [
     description:
       'Classic 01 is a walnut-tone fibre door finished with one vertical inlay. The leaf is moulded so the grain and line stay true in a humid climate, without the swelling of timber.',
     image: '/images/doors/classic-01.jpg',
+    arImage: '/images/doors/ar/classic-01.png',
     gallery: ['/images/doors/classic-01.jpg', '/images/doors/classic-02.jpg', '/images/doors/customise.jpg'],
     finishes: ['Walnut', 'Gold inlay', 'Dark frame'],
     design: 'Vertical walnut grain with a single metallic inlay and a matching architrave.',
@@ -101,6 +105,7 @@ export const products = [
     description:
       'Classic 02 uses a six-panel layout with shallower relief, so the door reads as traditional without becoming heavy. Ideal where multiple doors sit in a single corridor.',
     image: '/images/doors/classic-02.jpg',
+    arImage: '/images/doors/ar/classic-02.png',
     gallery: ['/images/doors/classic-02.jpg', '/images/doors/classic-01.jpg'],
     finishes: ['Natural Teak Tone', 'Cream', 'Deep Walnut'],
     design: 'Six-panel layout with shallow relief and a square-edge option.',
@@ -123,6 +128,7 @@ export const products = [
     description:
       'Designer 01 is a composed groove pattern across a flush fibre face. It is intended for feature rooms — living, dining, principal bedrooms — where the door is part of the interior language.',
     image: '/images/doors/designer-01.jpg',
+    arImage: '/images/doors/ar/designer-01.png',
     gallery: ['/images/doors/designer-01.jpg', '/images/doors/customise.jpg', '/images/doors/custom-02.jpg'],
     finishes: ['Putty', 'Olive', 'Charcoal', 'Custom colour'],
     design: 'Linear groove composition. Available as a matching pair for double openings.',
@@ -145,6 +151,7 @@ export const products = [
     description:
       'Designer 02 divides the door face into a quiet geometric field. It works especially well in spaces with art, stone or timber joinery that need a door of equal intent.',
     image: '/images/doors/designer-02.jpg',
+    arImage: '/images/doors/ar/designer-02.png',
     gallery: ['/images/doors/designer-02.jpg', '/images/doors/designer-01.jpg', '/images/doors/classic-01.jpg'],
     finishes: ['Warm Sand', 'Ink', 'Custom colour'],
     design: 'Geometric field with balanced divisions. Optional inlay texture.',
@@ -167,6 +174,7 @@ export const products = [
     description:
       'Minimal 01 is a true flush door — no grooves, no panels, no visual noise. It is specified where walls, joinery and doors should read as a single architectural surface.',
     image: '/images/doors/custom-01.jpg',
+    arImage: '/images/doors/ar/custom-01.png',
     gallery: ['/images/doors/custom-01.jpg', '/images/doors/customise.jpg'],
     finishes: ['Gallery White', 'Warm Grey', 'Custom colour match'],
     design: 'Fully flush face. Hidden or slim hardware recommended.',
@@ -189,6 +197,7 @@ export const products = [
     description:
       'Minimal 02 is specified for bathrooms, utility rooms and wet-adjacent interiors. The fibre body and sealed edges are designed for daily moisture without swelling or peeling.',
     image: '/images/doors/customise.jpg',
+    arImage: '/images/doors/ar/customise.png',
     gallery: ['/images/doors/customise.jpg', '/images/doors/custom-01.jpg'],
     finishes: ['White', 'Soft Grey', 'Sage'],
     design: 'Flush face with sealed edges. Suitable for wet-adjacent rooms.',
@@ -211,6 +220,7 @@ export const products = [
     description:
       'Modern 04 pairs concentric rectangular panels with side square accents. The warm wood-tone fibre face reads as architecture in foyers and living rooms, without the movement of timber.',
     image: '/images/sanrodoors/Elegant Modern Entryway with Wooden Door.png',
+    arImage: '/images/doors/ar/modern-04.png',
     gallery: [
       '/images/sanrodoors/Elegant Modern Entryway with Wooden Door.png',
       '/images/sanrodoors/Sage Green Foyer with Mahogany Door.png',
@@ -236,6 +246,7 @@ export const products = [
     description:
       'Classic 03 uses a tall vertical panel beside a column of recessed rectangles. It brings classic depth to interiors that want timber character with fibre stability.',
     image: '/images/sanrodoors/Sage Green Foyer with Mahogany Door.png',
+    arImage: '/images/doors/ar/classic-03.png',
     gallery: [
       '/images/sanrodoors/Sage Green Foyer with Mahogany Door.png',
       '/images/sanrodoors/Elegant Modern Entryway with Wooden Door.png',
@@ -261,6 +272,7 @@ export const products = [
     description:
       'Designer 03 combines a solid lower panel with an art-glass upper light. Fibre construction keeps the leaf stable while the glass insert adds colour and presence in living and entry spaces.',
     image: '/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png',
+    arImage: '/images/doors/ar/designer-03.png',
     gallery: [
       '/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png',
       '/images/sanrodoors/Warm Scandinavian Entryway Living Room.png',
@@ -286,6 +298,7 @@ export const products = [
     description:
       'Minimal 03 is a light wood-tone fibre door with a vertical column of recessed panels. Soft Nordic proportions for living spaces and bedrooms that prefer calm over ornament.',
     image: '/images/sanrodoors/Warm Scandinavian Entryway Living Room.png',
+    arImage: '/images/doors/ar/minimal-03.png',
     gallery: [
       '/images/sanrodoors/Warm Scandinavian Entryway Living Room.png',
       '/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png',
@@ -361,6 +374,7 @@ export const products = [
     description:
       'Custom 01 is the starting point for project work — villas, apartments and commercial interiors that need matching sets, unusual dimensions, or a finish that belongs to a specific palette.',
     image: '/images/doors/custom-01.jpg',
+    arImage: '/images/doors/ar/custom-01.png',
     gallery: ['/images/doors/custom-01.jpg', '/images/doors/customise.jpg', '/images/doors/classic-01.jpg'],
     finishes: ['Client-specified colour', 'Texture match', 'Wood-tone series'],
     design: 'Fully custom face, size and hardware coordination.',
@@ -383,6 +397,7 @@ export const products = [
     description:
       'Custom 02 covers larger openings — principal living rooms, office suites and commercial interiors — where a single leaf is not enough and the door must still behave as architecture.',
     image: '/images/doors/custom-02.jpg',
+    arImage: '/images/doors/ar/custom-02.png',
     gallery: ['/images/doors/custom-02.jpg', '/images/doors/designer-01.jpg', '/images/doors/customise.jpg'],
     finishes: ['Project palette', 'Metallic accent options', 'Timber-tone'],
     design: 'Double leaf or oversized single. Coordinated meeting stiles.',
