@@ -54,6 +54,9 @@ export function Hero() {
         src="/images/gallery/hero_bg.png"
         alt="SANRO fibre interior door in a modern living space"
         className="absolute inset-0 h-full w-full object-cover object-center"
+        loading="eager"
+        decoding="sync"
+        fetchPriority="high"
       />
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,rgba(17,17,17,0.28)_0%,rgba(17,17,17,0.08)_34%,rgba(17,17,17,0.22)_62%,rgba(17,17,17,0.45)_100%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-[5] h-24 bg-gradient-to-b from-transparent to-white" />

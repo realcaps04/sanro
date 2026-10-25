@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { Seo } from '../../components/ui/Seo'
 import { Container } from '../../components/ui/Container'
@@ -24,10 +24,13 @@ function matchesQuery(product, query) {
   return haystack.includes(query)
 }
 
+const PAGE_SIZE = 8
+
 export default function ProductsPage() {
   const [params] = useSearchParams()
   const query = (params.get('q') || '').trim()
   const [category, setCategory] = useState('All')
+  const [visible, setVisible] = useState(PAGE_SIZE)
   const filters = ['All', ...productCategories]
   const list = useMemo(() => {
     const byCategory = category === 'All' ? products : products.filter((item) => item.category === category)
@@ -35,6 +38,17 @@ export default function ProductsPage() {
     const needle = query.toLowerCase()
     return byCategory.filter((item) => matchesQuery(item, needle))
   }, [category, query])
+
+  useEffect(() => {
+    setVisible(PAGE_SIZE)
+  }, [category, query])
+
+  const shown = list.slice(0, visible)
+  const hasMore = visible < list.length
+
+  function onCategoryChange(next) {
+    setCategory(next)
+  }
 
   return (
     <>
@@ -57,17 +71,30 @@ export default function ProductsPage() {
             </p>
           ) : null}
           <div className="mt-10">
-            <ProjectFilter filters={filters} active={category} onChange={setCategory} />
+            <ProjectFilter filters={filters} active={category} onChange={onCategoryChange} />
           </div>
         </Container>
       </section>
       <section className="bg-white py-16 lg:py-24">
         <Container>
           {list.length || category === 'Custom' ? (
-            <ProductGrid
-              products={list}
-              trailing={category === 'Custom' ? <CustomRequestCard /> : null}
-            />
+            <>
+              <ProductGrid
+                products={shown}
+                trailing={category === 'Custom' ? <CustomRequestCard /> : null}
+              />
+              {hasMore ? (
+                <div className="mt-14 flex justify-center">
+                  <button
+                    type="button"
+                    onClick={() => setVisible((count) => count + PAGE_SIZE)}
+                    className="rounded-full border border-ink bg-white px-7 py-3 text-[13px] font-medium tracking-normal text-ink transition-colors hover:border-accent hover:text-accent"
+                  >
+                    Show more doors
+                  </button>
+                </div>
+              ) : null}
+            </>
           ) : (
             <p className="text-sm text-muted">No doors match that search. Try a style such as Modern, Classic, or Bathroom.</p>
           )}

@@ -1,6 +1,7 @@
 import { rooms } from '../../data/rooms'
 import { Container } from '../ui/Container'
 import { Reveal } from '../ui/Reveal'
+import { SmartImage } from '../ui/SmartImage'
 
 export function Rooms() {
   return (
@@ -19,7 +20,7 @@ export function Rooms() {
             >
               <article className="group relative h-full overflow-hidden rounded-card shadow-card">
                 <div className={index === 0 ? 'h-full min-h-[420px] lg:absolute lg:inset-0 lg:min-h-0' : 'aspect-[4/5]'}>
-                  <img
+                  <SmartImage
                     src={room.image}
                     alt={`${room.title} with a SANRO fibre door`}
                     className="img-cover transition-transform duration-700 group-hover:scale-[1.04]"

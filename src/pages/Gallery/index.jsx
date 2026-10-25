@@ -4,6 +4,7 @@ import { Container } from '../../components/ui/Container'
 import { ProjectFilter } from '../../components/project/ProjectFilter'
 import { CtaBand } from '../../components/sections/CtaBand'
 import { galleryCategories, getGalleryByCategory } from '../../data/gallery'
+import { SmartImage } from '../../components/ui/SmartImage'
 
 export default function GalleryPage() {
   const [category, setCategory] = useState('All')
@@ -29,7 +30,7 @@ export default function GalleryPage() {
           <div className="masonry">
             {items.map((item) => (
               <figure key={item.id} className="masonry-item overflow-hidden rounded-card bg-surface shadow-card">
-                <img
+                <SmartImage
                   src={item.src}
                   alt={item.alt}
                   className={`w-full object-cover ${item.tall ? 'aspect-[3/4]' : 'aspect-[4/3]'}`}

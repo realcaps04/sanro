@@ -2,6 +2,7 @@ import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
 import { useQuote } from '../../context/QuoteContext'
+import { SmartImage } from '../ui/SmartImage'
 
 const options = ['Designs', 'Colours', 'Finishes', 'Textures', 'Dimensions']
 
@@ -14,7 +15,7 @@ export function Customisation() {
         <Reveal delay={80} className="lg:order-2">
           <div className="overflow-hidden rounded-card bg-surface shadow-card">
             <div className="aspect-[5/4]">
-              <img
+              <SmartImage
                 src="/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png"
                 alt="Custom SANRO fibre door finish in a styled interior"
                 className="img-cover"

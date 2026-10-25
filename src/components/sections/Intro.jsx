@@ -1,6 +1,7 @@
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
+import { SmartImage } from '../ui/SmartImage'
 
 export function Intro() {
   return (
@@ -9,7 +10,7 @@ export function Intro() {
         <Reveal>
           <div className="overflow-hidden rounded-card bg-surface shadow-card">
             <div className="aspect-[4/5] lg:aspect-[5/6]">
-              <img
+              <SmartImage
                 src="/images/sanrodoors/Sage Green Foyer with Mahogany Door.png"
                 alt="SANRO fibre interior door in a residential interior"
                 className="img-cover"

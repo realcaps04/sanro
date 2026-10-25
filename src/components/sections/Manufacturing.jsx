@@ -1,6 +1,7 @@
 import { manufacturingSteps } from '../../data/rooms'
 import { Container } from '../ui/Container'
 import { Reveal } from '../ui/Reveal'
+import { SmartImage } from '../ui/SmartImage'
 
 export function Manufacturing() {
   return (
@@ -22,7 +23,7 @@ export function Manufacturing() {
             <Reveal key={step.title} delay={index * 50}>
               <article className="overflow-hidden rounded-card bg-white/5 shadow-[0_16px_36px_rgb(0_0_0/0.28)]">
                 <div className="aspect-[16/10] overflow-hidden">
-                  <img src={step.image} alt={`${step.title} at SANRO`} className="img-cover opacity-80" />
+                  <SmartImage src={step.image} alt={`${step.title} at SANRO`} className="img-cover opacity-80" />
                 </div>
                 <div className="px-6 py-6">
                   <p className="text-[11px] uppercase tracking-[0.22em] text-white/40">

@@ -7,6 +7,7 @@ import { ProductCard } from '../../components/product/ProductCard'
 import { CtaBand } from '../../components/sections/CtaBand'
 import { getProductBySlug, getRelatedProducts } from '../../data/products'
 import { useQuote } from '../../context/QuoteContext'
+import { SmartImage } from '../../components/ui/SmartImage'
 
 const DoorArViewer = lazy(() =>
   import('../../components/product/DoorArViewer').then((mod) => ({ default: mod.DoorArViewer })),
@@ -50,7 +51,8 @@ export default function ProductDetailsPage() {
           <div>
             <div className="relative overflow-hidden rounded-card bg-surface shadow-card">
               <div className="aspect-[4/5] sm:aspect-[5/4] lg:aspect-[4/5]">
-                <img
+                <SmartImage
+                  priority
                   src={gallery[active]}
                   alt={`${product.name} ${product.code}`}
                   className="img-cover"
@@ -76,7 +78,7 @@ export default function ProductDetailsPage() {
                     className={`overflow-hidden rounded-control transition-shadow ${active === index ? 'shadow-float' : 'shadow-card opacity-80'}`}
                   >
                     <span className="block aspect-square">
-                      <img src={src} alt="" className="img-cover" />
+                      <SmartImage src={src} alt="" className="img-cover" />
                     </span>
                   </button>
                 ))}

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Plus } from 'lucide-react'
+import { SmartImage } from '../ui/SmartImage'
 
 export function ProductCard({ product }) {
   return (
@@ -7,7 +8,7 @@ export function ProductCard({ product }) {
       <Link to={`/products/${product.slug}`} className="flex h-full flex-col">
         <div className="relative overflow-hidden rounded-card bg-surface shadow-card">
           <div className="aspect-[4/5]">
-            <img
+            <SmartImage
               src={product.image}
               alt={`${product.name} fibre interior door`}
               className="img-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"

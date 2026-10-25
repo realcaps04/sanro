@@ -2,6 +2,7 @@ import { galleryItems } from '../../data/gallery'
 import { Container } from '../ui/Container'
 import { Button } from '../ui/Button'
 import { Reveal } from '../ui/Reveal'
+import { SmartImage } from '../ui/SmartImage'
 
 export function HomeGallery() {
   const items = galleryItems.slice(0, 6)
@@ -30,7 +31,7 @@ export function HomeGallery() {
                 key={item.id}
                 className={`overflow-hidden rounded-card shadow-card ${index === 0 ? 'col-span-2 aspect-[16/10] sm:col-span-2 sm:row-span-2 sm:aspect-auto sm:h-full' : 'aspect-square'}`}
               >
-                <img src={item.src} alt={item.alt} className="img-cover" />
+                <SmartImage src={item.src} alt={item.alt} className="img-cover" />
               </div>
             ))}
           </div>
