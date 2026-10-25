@@ -1,8 +1,11 @@
 import { Link } from 'react-router-dom'
 import { company, footerServices, navLinks } from '../../data/company'
 import { Container } from '../ui/Container'
+import { useCookieConsent } from '../../hooks/useCookieConsent'
 
 export function Footer() {
+  const { reset } = useCookieConsent()
+
   return (
     <footer className="bg-white">
       <Container className="grid grid-cols-2 gap-x-8 gap-y-12 py-16 lg:grid-cols-4 lg:gap-8 lg:py-20">
@@ -65,7 +68,16 @@ export function Footer() {
           <p>
             © 2026 <span className="text-accent">SANRO</span> FIBRE GLASS INDUSTRIES. All rights reserved.
           </p>
-          <p>Idukki, Kerala</p>
+          <div className="flex items-center gap-4">
+            <button
+              type="button"
+              onClick={() => reset()}
+              className="text-left transition-colors hover:text-ink"
+            >
+              Cookie settings
+            </button>
+            <p>Idukki, Kerala</p>
+          </div>
       </Container>
     </footer>
   )

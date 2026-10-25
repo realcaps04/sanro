@@ -4,6 +4,7 @@ import { ReactLenis, useLenis } from 'lenis/react'
 import { Header } from './Header'
 import { Footer } from './Footer'
 import { QuoteModal } from '../forms/QuoteModal'
+import { CookieConsent } from '../CookieConsent'
 
 function ScrollRestore() {
   const { pathname } = useLocation()
@@ -41,6 +42,7 @@ export function Layout() {
         </main>
         <Footer />
         <QuoteModal />
+        <CookieConsent />
       </div>
     </ReactLenis>
   )
