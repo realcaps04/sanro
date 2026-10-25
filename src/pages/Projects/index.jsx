@@ -1,20 +1,14 @@
-import { useMemo, useState } from 'react'
 import { Seo } from '../../components/ui/Seo'
 import { Container } from '../../components/ui/Container'
-import { ProjectCard } from '../../components/project/ProjectCard'
-import { ProjectFilter } from '../../components/project/ProjectFilter'
 import { CtaBand } from '../../components/sections/CtaBand'
-import { getProjectsByFilter, projectFilters } from '../../data/projects'
+import { ProjectsUpdatingSoon } from '../../components/project/ProjectsUpdatingSoon'
 
 export default function ProjectsPage() {
-  const [filter, setFilter] = useState('All')
-  const list = useMemo(() => getProjectsByFilter(filter), [filter])
-
   return (
     <>
       <Seo
-        title="SANRO Projects | Residential, Commercial and Waterproofing"
-        description="Completed SANRO work across residential interiors, commercial spaces, custom doors and waterproofing in Kerala."
+        title="SANRO Projects | Updating Soon"
+        description="SANRO project case studies are being updated with accurate photography from completed work across Kerala."
       />
       <section className="bg-white pt-28 pb-16 lg:pt-32 lg:pb-20">
         <Container>
@@ -23,20 +17,13 @@ export default function ProjectsPage() {
             <span className="text-accent">SANRO</span> Projects
           </h1>
           <p className="mt-5 max-w-xl text-[15px] leading-7 text-muted">
-            Real residential and commercial work — interior fibre doors, custom manufacturing and waterproofing.
+            Residential, commercial and waterproofing case studies — with real site photography — will appear here soon.
           </p>
-          <div className="mt-10">
-            <ProjectFilter filters={projectFilters} active={filter} onChange={setFilter} />
-          </div>
         </Container>
       </section>
-      <section className="bg-white py-16 lg:py-24">
+      <section className="bg-white pb-16 lg:pb-24">
         <Container>
-          <div className="grid gap-x-8 gap-y-14 md:grid-cols-2">
-            {list.map((project) => (
-              <ProjectCard key={project.slug} project={project} />
-            ))}
-          </div>
+          <ProjectsUpdatingSoon />
         </Container>
       </section>
       <CtaBand />
