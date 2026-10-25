@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { Seo } from '../../components/ui/Seo'
 import { Container } from '../../components/ui/Container'
@@ -19,6 +19,11 @@ export default function ProductDetailsPage() {
   const { openQuote } = useQuote()
   const [active, setActive] = useState(0)
   const [arOpen, setArOpen] = useState(false)
+
+  useEffect(() => {
+    setActive(0)
+    setArOpen(false)
+  }, [slug])
 
   if (!product) {
     return (
