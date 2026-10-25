@@ -1,14 +1,13 @@
 import { useEffect, useState } from 'react'
 import { ArrowRight, X } from 'lucide-react'
 import { usePresence } from '../../hooks/usePresence'
-import { connectWithGoogle, isValidEmail, subscribeWithEmail } from '../../utils/api'
+import { isValidEmail, subscribeWithEmail } from '../../utils/api'
 
 export function SubscribeModal({ open, onClose }) {
   const { mounted, active } = usePresence(open, 320)
   const [email, setEmail] = useState('')
   const [error, setError] = useState('')
   const [status, setStatus] = useState('idle')
-  const [googleNote, setGoogleNote] = useState(false)
 
   useEffect(() => {
     if (!mounted) return undefined
@@ -29,15 +28,8 @@ export function SubscribeModal({ open, onClose }) {
     setEmail('')
     setError('')
     setStatus('idle')
-    setGoogleNote(false)
     return undefined
   }, [open])
-
-  async function onGoogle() {
-    setGoogleNote(false)
-    const result = await connectWithGoogle()
-    if (!result.ok) setGoogleNote(true)
-  }
 
   async function onSubmit(event) {
     event.preventDefault()
@@ -115,32 +107,7 @@ export function SubscribeModal({ open, onClose }) {
                   </li>
                 ))}
               </ul>
-              <button
-                type="button"
-                onClick={onGoogle}
-                className="mt-8 flex w-full items-center justify-between rounded-full bg-ink py-1.5 pr-1.5 pl-5 text-[13px] font-medium text-white shadow-[0_10px_28px_rgba(17,17,17,0.18)]"
-              >
-                <span className="flex items-center gap-3">
-                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-white">
-                    <GoogleMark />
-                  </span>
-                  Connect with Google
-                </span>
-                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/15">
-                  <ArrowRight size={15} strokeWidth={2.25} aria-hidden="true" />
-                </span>
-              </button>
-              {googleNote ? (
-                <p className="mt-3 text-sm leading-6 text-muted">
-                  Google sign-in will open once the account is linked. Leave your email and your place is kept.
-                </p>
-              ) : null}
-              <div className="my-5 flex items-center gap-4 text-[12px] text-muted">
-                <span className="h-px flex-1 bg-line" />
-                or
-                <span className="h-px flex-1 bg-line" />
-              </div>
-              <form onSubmit={onSubmit}>
+              <form onSubmit={onSubmit} className="mt-8">
                 <label className="sr-only" htmlFor="subscribe-email">
                   Email address
                 </label>
@@ -178,28 +145,5 @@ export function SubscribeModal({ open, onClose }) {
         </div>
       </div>
     </div>
-  )
-}
-
-function GoogleMark() {
-  return (
-    <svg width="14" height="14" viewBox="0 0 18 18" aria-hidden="true">
-      <path
-        fill="#4285F4"
-        d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844a4.14 4.14 0 0 1-1.796 2.716v2.259h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"
-      />
-      <path
-        fill="#34A853"
-        d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.908-2.259c-.806.54-1.837.86-3.048.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"
-      />
-      <path
-        fill="#FBBC05"
-        d="M3.964 10.706A5.41 5.41 0 0 1 3.682 9c0-.593.102-1.17.282-1.706V4.962H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.038l3.007-2.332z"
-      />
-      <path
-        fill="#EA4335"
-        d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.962L3.964 7.294C4.672 5.163 6.656 3.58 9 3.58z"
-      />
-    </svg>
   )
 }

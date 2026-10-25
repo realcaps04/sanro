@@ -31,7 +31,7 @@ export const rooms = [
   },
   {
     title: 'Hospitality',
-    image: '/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png',
+    image: '/images/doors/ar/Modern Hospital Corridor with Room Signs.png',
     text: 'A considered face for guest spaces.',
   },
 ]
