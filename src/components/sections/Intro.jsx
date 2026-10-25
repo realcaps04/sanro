@@ -10,7 +10,7 @@ export function Intro() {
           <div className="overflow-hidden rounded-card bg-surface shadow-card">
             <div className="aspect-[4/5] lg:aspect-[5/6]">
               <img
-                src="/images/doors/classic-01.jpg"
+                src="/images/sanrodoors/Sage Green Foyer with Mahogany Door.png"
                 alt="SANRO fibre interior door in a residential interior"
                 className="img-cover"
               />

@@ -11,7 +11,11 @@ export const projects = [
     description:
       'SANRO manufactured a coordinated set of interior fibre doors for a family residence in Idukki. The brief asked for a calm, modern face across living, bedrooms and bathrooms, with finishes that would hold through monsoon humidity.',
     image: '/images/projects/resid-01.jpg',
-    images: ['/images/projects/resid-01.jpg', '/images/doors/classic-02.jpg', '/images/doors/classic-01.jpg'],
+    images: [
+      '/images/projects/resid-01.jpg',
+      '/images/sanrodoors/Elegant Modern Entryway with Wooden Door.png',
+      '/images/sanrodoors/Sage Green Foyer with Mahogany Door.png',
+    ],
     year: '2025',
   },
   {
@@ -24,7 +28,11 @@ export const projects = [
     description:
       'A compact apartment needed doors that would disappear into pale joinery. SANRO supplied flush minimal doors, colour-matched to the interior palette, including a moisture-specified bathroom leaf.',
     image: '/images/projects/resid-02.jpg',
-    images: ['/images/projects/resid-02.jpg', '/images/doors/custom-01.jpg', '/images/doors/customise.jpg'],
+    images: [
+      '/images/projects/resid-02.jpg',
+      '/images/sanrodoors/Warm Scandinavian Entryway Living Room.png',
+      '/images/rooms/bedroom.jpg',
+    ],
     year: '2025',
   },
   {
@@ -37,7 +45,11 @@ export const projects = [
     description:
       'The villa mixed formal rooms with quieter private wings. SANRO supplied a hybrid set — classic panelled doors for the formal rooms and designer flush doors for the private wing — manufactured as one coordinated order.',
     image: '/images/projects/resid-03.jpg',
-    images: ['/images/projects/resid-03.jpg', '/images/doors/classic-01.jpg', '/images/doors/designer-01.jpg'],
+    images: [
+      '/images/projects/resid-03.jpg',
+      '/images/sanrodoors/Sage Green Foyer with Mahogany Door.png',
+      '/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png',
+    ],
     year: '2024',
   },
   {
@@ -50,7 +62,11 @@ export const projects = [
     description:
       'An office suite needed doors that would read as architecture rather than joinery. SANRO supplied a run of minimal flush doors for cabins, meeting rooms and service spaces.',
     image: '/images/projects/comm-02.jpg',
-    images: ['/images/projects/comm-02.jpg', '/images/doors/designer-01.jpg', '/images/doors/custom-02.jpg'],
+    images: [
+      '/images/projects/comm-02.jpg',
+      '/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png',
+      '/images/rooms/office.jpg',
+    ],
     year: '2025',
   },
   {
@@ -63,7 +79,11 @@ export const projects = [
     description:
       'The lobby required a larger opening than a standard leaf. SANRO manufactured custom double doors with a matching suite of interior doors for the offices beyond.',
     image: '/images/projects/comm-01.jpg',
-    images: ['/images/projects/comm-01.jpg', '/images/doors/custom-02.jpg', '/images/rooms/commercial.jpg'],
+    images: [
+      '/images/projects/comm-01.jpg',
+      '/images/sanrodoors/Elegant Modern Entryway with Wooden Door.png',
+      '/images/rooms/commercial.jpg',
+    ],
     year: '2024',
   },
   {

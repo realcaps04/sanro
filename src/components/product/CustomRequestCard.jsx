@@ -14,7 +14,7 @@ export function CustomRequestCard() {
         <div className="relative overflow-hidden rounded-card bg-surface shadow-card">
           <div className="aspect-[4/5]">
             <img
-              src="/images/doors/customise.jpg"
+              src="/images/sanrodoors/Warm Scandinavian Entryway Living Room.png"
               alt="Request a custom SANRO fibre door or service"
               className="img-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
             />

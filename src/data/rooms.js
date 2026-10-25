@@ -1,27 +1,27 @@
 export const rooms = [
   {
     title: 'Living Spaces',
-    image: '/images/doors/classic-02.jpg',
+    image: '/images/sanrodoors/Warm Scandinavian Entryway Living Room.png',
     text: 'Quiet doors for rooms that are seen all day.',
   },
   {
     title: 'Bedrooms',
-    image: '/images/doors/custom-01.jpg',
+    image: '/images/rooms/bedroom.jpg',
     text: 'Calm faces for private rooms.',
   },
   {
     title: 'Bathrooms',
-    image: '/images/doors/customise.jpg',
+    image: '/images/rooms/bathroom.jpg',
     text: 'Moisture-first specification for wet rooms.',
   },
   {
     title: 'Offices',
-    image: '/images/doors/classic-01.jpg',
+    image: '/images/rooms/office.jpg',
     text: 'Precise doors for professional interiors.',
   },
   {
     title: 'Commercial Interiors',
-    image: '/images/doors/custom-02.jpg',
+    image: '/images/rooms/commercial.jpg',
     text: 'Coordinated sets for larger buildings.',
   },
   {
@@ -31,7 +31,7 @@ export const rooms = [
   },
   {
     title: 'Hospitality',
-    image: '/images/doors/designer-01.jpg',
+    image: '/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png',
     text: 'A considered face for guest spaces.',
   },
 ]

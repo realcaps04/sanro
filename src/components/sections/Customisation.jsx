@@ -15,7 +15,7 @@ export function Customisation() {
           <div className="overflow-hidden rounded-card bg-surface shadow-card">
             <div className="aspect-[5/4]">
               <img
-                src="/images/doors/customise.jpg"
+                src="/images/sanrodoors/Warm Modern Entryway with Stained Glass Door.png"
                 alt="Custom SANRO fibre door finish in a styled interior"
                 className="img-cover"
               />

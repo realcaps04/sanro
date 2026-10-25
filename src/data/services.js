@@ -5,7 +5,7 @@ export const services = [
     summary: 'Interior fibre doors and customised door solutions manufactured for daily living.',
     description:
       'From flush contemporary doors to panelled classics, SANRO designs and manufactures fibre interior doors for homes, apartments and commercial interiors. Doors can be specified as individual pieces or as coordinated sets across a project.',
-    image: '/images/doors/classic-02.jpg',
+    image: '/images/sanrodoors/Elegant Modern Entryway with Wooden Door.png',
     items: [
       'Interior fibre doors',
       'Bathroom and wet-area doors',
